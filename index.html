@@ -1,0 +1,242 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Chapter&#160;1.&#160;Boost.Core</title>
+<link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Chapter&#160;1.&#160;Boost.Core">
+<link rel="next" href="core/addressof.html" title="Header &lt;boost/core/addressof.hpp&gt;">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%"><tr>
+<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src="http://boost.org/doc/libs/master/boost.png"></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/index.html">Home</a></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/libs/libraries.htm">Libraries</a></td>
+<td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
+<td align="center"><a href="http://www.boost.org/users/faq.html">FAQ</a></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/more/index.htm">More</a></td>
+</tr></table>
+<hr>
+<div class="spirit-nav"><a accesskey="n" href="core/addressof.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a></div>
+<div class="chapter">
+<div class="titlepage"><div>
+<div><h2 class="title">
+<a name="core"></a>Chapter&#160;1.&#160;Boost.Core</h2></div>
+<div><p class="copyright">Copyright &#169; 2014 Peter Dimov</p></div>
+<div><p class="copyright">Copyright &#169; 2014 Glen Fernandes</p></div>
+<div><p class="copyright">Copyright &#169; 2014 Andrey Semashev</p></div>
+<div><div class="legalnotice">
+<a name="core.legal"></a><p>
+        Distributed under the <a href="http://boost.org/LICENSE_1_0.txt" target="_top">Boost
+        Software License, Version 1.0</a>.
+      </p>
+</div></div>
+</div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="section"><a href="index.html#core.introduction">Introduction</a></span></dt>
+<dt><span class="section"><a href="core/addressof.html">Header &lt;boost/core/addressof.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/checked_delete.html">Header &lt;boost/core/checked_delete.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/enable_if.html">Header &lt;boost/core/enable_if.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/explicit_operator_bool.html">Header &lt;boost/core/explicit_operator_bool.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/ignore_unused.html">Header &lt;boost/core/ignore_unused.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/lightweight_test.html">Header &lt;boost/core/lightweight_test.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/no_exceptions_support.html">Header &lt;boost/core/no_exceptions_support.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/noncopyable.html">Header &lt;boost/core/noncopyable.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="core/swap.html">Header &lt;boost/core/swap.hpp&gt;</a></span></dt>
+</dl>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="core.introduction"></a><a class="link" href="index.html#core.introduction" title="Introduction">Introduction</a>
+</h2></div></div></div>
+<p>
+      The Boost.Core library is a collection of core utilities. The criteria for
+      inclusion is that the utility component be:
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+          simple,
+        </li>
+<li class="listitem">
+          used by other Boost libraries, and
+        </li>
+<li class="listitem">
+          not dependent on any other Boost modules except Core itself, Config, Assert,
+          Static Assert, or Predef.
+        </li>
+</ul></div>
+<p>
+      Currently, the Core library contains:
+    </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+              <p>
+                Component
+              </p>
+            </th>
+<th>
+              <p>
+                Utilities
+              </p>
+            </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/addressof.html" title="Header &lt;boost/core/addressof.hpp&gt;">addressof</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/checked_delete.html" title="Header &lt;boost/core/checked_delete.hpp&gt;">checked_delete</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">checked_delete</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/enable_if.html" title="Header &lt;boost/core/enable_if.hpp&gt;">enable_if</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">enable_if</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/explicit_operator_bool.html" title="Header &lt;boost/core/explicit_operator_bool.hpp&gt;">explicit_operator_bool</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL</span><span class="special">,</span> <span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL_NOEXCEPT</span><span class="special">,</span> <span class="identifier">BOOST_CONSTEXPR_EXPLICIT_OPERATOR_BOOL</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/ignore_unused.html" title="Header &lt;boost/core/ignore_unused.hpp&gt;">ignore_unused</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/lightweight_test.html" title="Header &lt;boost/core/lightweight_test.hpp&gt;">lightweight_test</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">BOOST_TEST</span><span class="special">,</span>
+                <span class="identifier">BOOST_ERROR</span><span class="special">,</span>
+                <span class="identifier">BOOST_TEST_EQ</span><span class="special">,</span>
+                <span class="identifier">BOOST_TEST_NE</span><span class="special">,</span>
+                <span class="identifier">BOOST_TEST_THROWS</span><span class="special">,</span>
+                <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/no_exceptions_support.html" title="Header &lt;boost/core/no_exceptions_support.hpp&gt;">no_exceptions_support</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">BOOST_TRY</span><span class="special">,</span>
+                <span class="identifier">BOOST_CATCH</span><span class="special">,</span>
+                <span class="identifier">BOOST_CATCH_END</span><span class="special">,</span>
+                <span class="identifier">BOOST_RETHROW</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/noncopyable.html" title="Header &lt;boost/core/noncopyable.hpp&gt;">noncopyable</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">noncopyable</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                null_deleter
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">null_deleter</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ref
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ref</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <a class="link" href="core/swap.html" title="Header &lt;boost/core/swap.hpp&gt;">swap</a>
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">swap</span></code>
+              </p>
+            </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"><p><small>Last revised: June 02, 2014 at 21:01:44 GMT</small></p></td>
+<td align="right"><div class="copyright-footer"></div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav"><a accesskey="n" href="core/addressof.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a></div>
+</body>
+</html>

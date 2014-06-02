@@ -1,0 +1,162 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Header &lt;boost/core/lightweight_test.hpp&gt;</title>
+<link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
+<link rel="prev" href="ignore_unused.html" title="Header &lt;boost/core/ignore_unused.hpp&gt;">
+<link rel="next" href="no_exceptions_support.html" title="Header &lt;boost/core/no_exceptions_support.hpp&gt;">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%"><tr>
+<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src="http://boost.org/doc/libs/master/boost.png"></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/index.html">Home</a></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/libs/libraries.htm">Libraries</a></td>
+<td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
+<td align="center"><a href="http://www.boost.org/users/faq.html">FAQ</a></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/more/index.htm">More</a></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="ignore_unused.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="no_exceptions_support.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="core.lightweight_test"></a><a class="link" href="lightweight_test.html" title="Header &lt;boost/core/lightweight_test.hpp&gt;">Header &lt;boost/core/lightweight_test.hpp&gt;</a>
+</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test">BOOST_TEST</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_error">BOOST_ERROR</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test_eq">BOOST_TEST_EQ</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test_ne">BOOST_TEST_NE</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test_throws">BOOST_TEST_THROWS</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.report_errors">report_errors</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.boost_test"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test" title="BOOST_TEST">BOOST_TEST</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">expression</span><span class="special">)</span>
+</pre>
+<p>
+      </p>
+<p>
+        If expression is false increases the error count and outputs a message containing
+        <code class="computeroutput"><span class="identifier">expression</span></code>.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.boost_error"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_error" title="BOOST_ERROR">BOOST_ERROR</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="identifier">BOOST_ERROR</span><span class="special">(</span><span class="identifier">message</span><span class="special">)</span>
+</pre>
+<p>
+      </p>
+<p>
+        Increases error count and outputs a message containing <code class="computeroutput"><span class="identifier">message</span></code>.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.boost_test_eq"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test_eq" title="BOOST_TEST_EQ">BOOST_TEST_EQ</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="identifier">BOOST_TEST_EQ</span><span class="special">(</span><span class="identifier">expr1</span><span class="special">,</span> <span class="identifier">expr2</span><span class="special">)</span>
+</pre>
+<p>
+      </p>
+<p>
+        If <code class="computeroutput"><span class="identifier">expr1</span></code> != <code class="computeroutput"><span class="identifier">expr2</span></code> increases the error count and outputs
+        a message containing both expressions.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.boost_test_ne"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test_ne" title="BOOST_TEST_NE">BOOST_TEST_NE</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="identifier">BOOST_TEST_NE</span><span class="special">(</span><span class="identifier">expr1</span><span class="special">,</span> <span class="identifier">expr2</span><span class="special">)</span>
+</pre>
+<p>
+      </p>
+<p>
+        If <code class="computeroutput"><span class="identifier">expr1</span></code> == <code class="computeroutput"><span class="identifier">expr2</span></code> increases the error count and outputs
+        a message containing both expressions.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.boost_test_throws"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test_throws" title="BOOST_TEST_THROWS">BOOST_TEST_THROWS</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="identifier">BOOST_TEST_THROWS</span><span class="special">(</span><span class="identifier">expr</span><span class="special">,</span> <span class="identifier">excep</span><span class="special">)</span>
+</pre>
+<p>
+      </p>
+<p>
+        If BOOST_NO_EXCEPTIONS is NOT defined and if <code class="computeroutput"><span class="identifier">expr</span></code>
+        does not throw an exception of type <code class="computeroutput"><span class="identifier">excep</span></code>,
+        increases the error count and outputs a message containing the expression.
+      </p>
+<p>
+        If BOOST_NO_EXCEPTIONS is defined, this macro expands to nothing and <code class="computeroutput"><span class="identifier">expr</span></code> is not evaluated.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.report_errors"></a><a class="link" href="lightweight_test.html#core.lightweight_test.report_errors" title="report_errors">report_errors</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="keyword">int</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">()</span>
+</pre>
+<p>
+      </p>
+<p>
+        Return the error count from <code class="computeroutput"><span class="identifier">main</span></code>.
+      </p>
+<p>
+        Example:
+      </p>
+<p>
+</p>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">lightweight_test</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+
+<span class="keyword">void</span> <span class="identifier">sqr</span><span class="special">(</span> <span class="keyword">int</span> <span class="identifier">x</span> <span class="special">);</span> <span class="comment">// should return x * x</span>
+
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
+<span class="special">{</span>
+     <span class="identifier">BOOST_TEST</span><span class="special">(</span> <span class="identifier">sqr</span><span class="special">(</span> <span class="number">2</span> <span class="special">)</span> <span class="special">==</span> <span class="number">4</span> <span class="special">);</span>
+     <span class="identifier">BOOST_TEST_EQ</span><span class="special">(</span> <span class="identifier">sqr</span><span class="special">(-</span><span class="number">3</span><span class="special">),</span> <span class="number">9</span> <span class="special">);</span>
+
+     <span class="keyword">return</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">();</span>
+<span class="special">}</span>
+</pre>
+<p>
+      </p>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Peter Dimov<br>Copyright &#169; 2014 Glen Fernandes<br>Copyright &#169; 2014 Andrey Semashev<p>
+        Distributed under the <a href="http://boost.org/LICENSE_1_0.txt" target="_top">Boost
+        Software License, Version 1.0</a>.
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="ignore_unused.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="no_exceptions_support.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>
