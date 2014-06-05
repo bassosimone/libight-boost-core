@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Header &lt;boost/core/lightweight_test.hpp&gt;</title>
+<title>lightweight_test</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="prev" href="ignore_unused.html" title="Header &lt;boost/core/ignore_unused.hpp&gt;">
-<link rel="next" href="no_exceptions_support.html" title="Header &lt;boost/core/no_exceptions_support.hpp&gt;">
+<link rel="prev" href="ignore_unused.html" title="ignore_unused">
+<link rel="next" href="no_exceptions_support.html" title="no_exceptions_support">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -24,110 +24,125 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.lightweight_test"></a><a class="link" href="lightweight_test.html" title="Header &lt;boost/core/lightweight_test.hpp&gt;">Header &lt;boost/core/lightweight_test.hpp&gt;</a>
+<a name="core.lightweight_test"></a><a class="link" href="lightweight_test.html" title="lightweight_test">lightweight_test</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
-<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test">BOOST_TEST</a></span></dt>
-<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_error">BOOST_ERROR</a></span></dt>
-<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test_eq">BOOST_TEST_EQ</a></span></dt>
-<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test_ne">BOOST_TEST_NE</a></span></dt>
-<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.boost_test_throws">BOOST_TEST_THROWS</a></span></dt>
-<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.report_errors">report_errors</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.authors">Authors</a></span></dt>
+<dt><span class="section"><a href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_">Header
+      &lt;boost/core/lightweight_test.hpp&gt;</a></span></dt>
 </dl></div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.lightweight_test.boost_test"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test" title="BOOST_TEST">BOOST_TEST</a>
+<a name="core.lightweight_test.authors"></a><a class="link" href="lightweight_test.html#core.lightweight_test.authors" title="Authors">Authors</a>
 </h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            Peter Dimov
+          </li>
+<li class="listitem">
+            Beman Dawes
+          </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_" title="Header &lt;boost/core/lightweight_test.hpp&gt;">Header
+      &lt;boost/core/lightweight_test.hpp&gt;</a>
+</h3></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test" title="BOOST_TEST">BOOST_TEST</a>
+</h4></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="identifier">BOOST_TEST</span><span class="special">(</span><span class="identifier">expression</span><span class="special">)</span>
 </pre>
 <p>
-      </p>
+        </p>
 <p>
-        If expression is false increases the error count and outputs a message containing
-        <code class="computeroutput"><span class="identifier">expression</span></code>.
-      </p>
+          If expression is false increases the error count and outputs a message
+          containing <code class="computeroutput"><span class="identifier">expression</span></code>.
+        </p>
 </div>
 <div class="section">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="core.lightweight_test.boost_error"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_error" title="BOOST_ERROR">BOOST_ERROR</a>
-</h3></div></div></div>
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_error"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_error" title="BOOST_ERROR">BOOST_ERROR</a>
+</h4></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="identifier">BOOST_ERROR</span><span class="special">(</span><span class="identifier">message</span><span class="special">)</span>
 </pre>
 <p>
-      </p>
+        </p>
 <p>
-        Increases error count and outputs a message containing <code class="computeroutput"><span class="identifier">message</span></code>.
-      </p>
+          Increases error count and outputs a message containing <code class="computeroutput"><span class="identifier">message</span></code>.
+        </p>
 </div>
 <div class="section">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="core.lightweight_test.boost_test_eq"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test_eq" title="BOOST_TEST_EQ">BOOST_TEST_EQ</a>
-</h3></div></div></div>
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test_eq"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test_eq" title="BOOST_TEST_EQ">BOOST_TEST_EQ</a>
+</h4></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="identifier">BOOST_TEST_EQ</span><span class="special">(</span><span class="identifier">expr1</span><span class="special">,</span> <span class="identifier">expr2</span><span class="special">)</span>
 </pre>
 <p>
-      </p>
+        </p>
 <p>
-        If <code class="computeroutput"><span class="identifier">expr1</span></code> != <code class="computeroutput"><span class="identifier">expr2</span></code> increases the error count and outputs
-        a message containing both expressions.
-      </p>
+          If <code class="computeroutput"><span class="identifier">expr1</span></code> != <code class="computeroutput"><span class="identifier">expr2</span></code> increases the error count and outputs
+          a message containing both expressions.
+        </p>
 </div>
 <div class="section">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="core.lightweight_test.boost_test_ne"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test_ne" title="BOOST_TEST_NE">BOOST_TEST_NE</a>
-</h3></div></div></div>
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test_ne"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test_ne" title="BOOST_TEST_NE">BOOST_TEST_NE</a>
+</h4></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="identifier">BOOST_TEST_NE</span><span class="special">(</span><span class="identifier">expr1</span><span class="special">,</span> <span class="identifier">expr2</span><span class="special">)</span>
 </pre>
 <p>
-      </p>
+        </p>
 <p>
-        If <code class="computeroutput"><span class="identifier">expr1</span></code> == <code class="computeroutput"><span class="identifier">expr2</span></code> increases the error count and outputs
-        a message containing both expressions.
-      </p>
+          If <code class="computeroutput"><span class="identifier">expr1</span></code> == <code class="computeroutput"><span class="identifier">expr2</span></code> increases the error count and outputs
+          a message containing both expressions.
+        </p>
 </div>
 <div class="section">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="core.lightweight_test.boost_test_throws"></a><a class="link" href="lightweight_test.html#core.lightweight_test.boost_test_throws" title="BOOST_TEST_THROWS">BOOST_TEST_THROWS</a>
-</h3></div></div></div>
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test_throws"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_.boost_test_throws" title="BOOST_TEST_THROWS">BOOST_TEST_THROWS</a>
+</h4></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="identifier">BOOST_TEST_THROWS</span><span class="special">(</span><span class="identifier">expr</span><span class="special">,</span> <span class="identifier">excep</span><span class="special">)</span>
 </pre>
 <p>
-      </p>
+        </p>
 <p>
-        If BOOST_NO_EXCEPTIONS is NOT defined and if <code class="computeroutput"><span class="identifier">expr</span></code>
-        does not throw an exception of type <code class="computeroutput"><span class="identifier">excep</span></code>,
-        increases the error count and outputs a message containing the expression.
-      </p>
+          If BOOST_NO_EXCEPTIONS is NOT defined and if <code class="computeroutput"><span class="identifier">expr</span></code>
+          does not throw an exception of type <code class="computeroutput"><span class="identifier">excep</span></code>,
+          increases the error count and outputs a message containing the expression.
+        </p>
 <p>
-        If BOOST_NO_EXCEPTIONS is defined, this macro expands to nothing and <code class="computeroutput"><span class="identifier">expr</span></code> is not evaluated.
-      </p>
+          If BOOST_NO_EXCEPTIONS is defined, this macro expands to nothing and <code class="computeroutput"><span class="identifier">expr</span></code> is not evaluated.
+        </p>
 </div>
 <div class="section">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="core.lightweight_test.report_errors"></a><a class="link" href="lightweight_test.html#core.lightweight_test.report_errors" title="report_errors">report_errors</a>
-</h3></div></div></div>
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.lightweight_test.header__boost_core_lightweight_test_hpp_.report_errors"></a><a class="link" href="lightweight_test.html#core.lightweight_test.header__boost_core_lightweight_test_hpp_.report_errors" title="report_errors">report_errors</a>
+</h4></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="keyword">int</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">report_errors</span><span class="special">()</span>
 </pre>
 <p>
-      </p>
+        </p>
 <p>
-        Return the error count from <code class="computeroutput"><span class="identifier">main</span></code>.
-      </p>
+          Return the error count from <code class="computeroutput"><span class="identifier">main</span></code>.
+        </p>
 <p>
-        Example:
-      </p>
+          Example:
+        </p>
 <p>
 </p>
 <pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">lightweight_test</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
@@ -143,7 +158,8 @@
 <span class="special">}</span>
 </pre>
 <p>
-      </p>
+        </p>
+</div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

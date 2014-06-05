@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Header &lt;boost/core/addressof.hpp&gt;</title>
+<title>addressof</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="prev" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="next" href="checked_delete.html" title="Header &lt;boost/core/checked_delete.hpp&gt;">
+<link rel="next" href="checked_delete.html" title="checked_delete">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -24,20 +24,71 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.addressof"></a><a class="link" href="addressof.html" title="Header &lt;boost/core/addressof.hpp&gt;">Header &lt;boost/core/addressof.hpp&gt;</a>
+<a name="core.addressof"></a><a class="link" href="addressof.html" title="addressof">addressof</a>
 </h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="addressof.html#core.addressof.authors">Authors</a></span></dt>
+<dt><span class="section"><a href="addressof.html#core.addressof.header__boost_core_addressof_hpp_">Header
+      &lt;boost/core/addressof.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="addressof.html#core.addressof.example">Example</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.addressof.authors"></a><a class="link" href="addressof.html#core.addressof.authors" title="Authors">Authors</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            Brad King
+          </li>
+<li class="listitem">
+            Douglas Gregor
+          </li>
+<li class="listitem">
+            Peter Dimov
+          </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.addressof.header__boost_core_addressof_hpp_"></a><a class="link" href="addressof.html#core.addressof.header__boost_core_addressof_hpp_" title="Header &lt;boost/core/addressof.hpp&gt;">Header
+      &lt;boost/core/addressof.hpp&gt;</a>
+</h3></div></div></div>
 <p>
-      The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">addressof</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code> defines
-      the function template <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span></code>.
-      <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span><span class="special">(</span><span class="identifier">x</span><span class="special">)</span></code> returns
-      the address of <code class="computeroutput"><span class="identifier">x</span></code>. Ordinarily,
-      this address can be obtained by <code class="computeroutput"><span class="special">&amp;</span><span class="identifier">x</span></code>, but the unary <code class="computeroutput"><span class="special">&amp;</span></code>
-      operator can be overloaded.
-    </p>
+        The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">addressof</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>
+        defines the function template <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span></code>.
+        <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span><span class="special">(</span><span class="identifier">x</span><span class="special">)</span></code> returns
+        the address of <code class="computeroutput"><span class="identifier">x</span></code>. Ordinarily,
+        this address can be obtained by <code class="computeroutput"><span class="special">&amp;</span><span class="identifier">x</span></code>, but the unary <code class="computeroutput"><span class="special">&amp;</span></code>
+        operator can be overloaded.
+      </p>
 <p>
-      <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span></code> was originally contributed by Brad
-      King based on ideas from discussion with Doug Gregor.
-    </p>
+        <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span></code> was originally contributed by
+        Brad King based on ideas from discussion with Doug Gregor.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.addressof.example"></a><a class="link" href="addressof.html#core.addressof.example" title="Example">Example</a>
+</h3></div></div></div>
+<p>
+</p>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">addressof</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+
+<span class="keyword">struct</span> <span class="identifier">useless_type</span> <span class="special">{</span> <span class="special">};</span>
+
+<span class="keyword">class</span> <span class="identifier">nonaddressable</span> <span class="special">{</span>
+    <span class="identifier">useless_type</span> <span class="keyword">operator</span><span class="special">&amp;()</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">};</span>
+
+<span class="keyword">void</span> <span class="identifier">f</span><span class="special">()</span> <span class="special">{</span>
+    <span class="identifier">nonaddressable</span> <span class="identifier">x</span><span class="special">;</span>
+    <span class="identifier">nonaddressable</span><span class="special">*</span> <span class="identifier">xp</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span><span class="special">(</span><span class="identifier">x</span><span class="special">);</span>
+    <span class="comment">// nonaddressable* xpe = &amp;x; /* error */</span>
+<span class="special">}</span>
+</pre>
+<p>
+      </p>
+</div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>

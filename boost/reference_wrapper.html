@@ -6,7 +6,7 @@
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../core/ref.html#header.boost.core.ref_hpp" title="Header &lt;boost/core/ref.hpp&gt;">
-<link rel="prev" href="../core/ref.html" title="Header &lt;boost/core/ref.hpp&gt;">
+<link rel="prev" href="../core/ref.html" title="ref">
 <link rel="next" href="is_reference_wrapper.html" title="Struct template is_reference_wrapper">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -38,18 +38,18 @@
   <span class="keyword">typedef</span> <span class="identifier">T</span> <a class="link" href="reference_wrapper.html#boost.reference_wrapper.type"><span class="identifier">type</span></a><span class="special">;</span>
 
   <span class="comment">// <a class="link" href="reference_wrapper.html#boost.reference_wrapperconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <span class="keyword">explicit</span> <a class="link" href="reference_wrapper.html#idp18320160-bb"><span class="identifier">reference_wrapper</span></a><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">explicit</span> <a class="link" href="reference_wrapper.html#idp18116144-bb"><span class="identifier">reference_wrapper</span></a><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="reference_wrapper.html#idp18312272-bb">public member functions</a></span>
-  <span class="identifier">BOOST_FORCEINLINE</span> <a class="link" href="reference_wrapper.html#idp18312832-bb"><span class="keyword">operator</span> <span class="identifier">T</span> <span class="special">&amp;</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">&amp;</span> <a class="link" href="reference_wrapper.html#idp18315232-bb"><span class="identifier">get</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="reference_wrapper.html#idp18317632-bb"><span class="identifier">get_pointer</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="reference_wrapper.html#idp18107936-bb">public member functions</a></span>
+  <span class="identifier">BOOST_FORCEINLINE</span> <a class="link" href="reference_wrapper.html#idp18108496-bb"><span class="keyword">operator</span> <span class="identifier">T</span> <span class="special">&amp;</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">&amp;</span> <a class="link" href="reference_wrapper.html#idp18110896-bb"><span class="identifier">get</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">*</span> <a class="link" href="reference_wrapper.html#idp18113616-bb"><span class="identifier">get_pointer</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp82115376"></a><h2>Description</h2>
+<a name="idp88215440"></a><h2>Description</h2>
 <p><code class="computeroutput"><a class="link" href="reference_wrapper.html" title="Class template reference_wrapper">reference_wrapper</a></code> is primarily used to "feed" references to function templates (algorithms) that take their parameter by value. It provides an implicit conversion to <code class="computeroutput">T&amp;</code>, which usually allows the function templates to work on references unmodified. </p>
 <div class="refsect2">
-<a name="idp82117968"></a><h3>
+<a name="idp88218032"></a><h3>
 <a name="boost.reference_wrappertypes"></a><code class="computeroutput">reference_wrapper</code> 
         public
        types</h3>
@@ -60,12 +60,12 @@
 </li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp82124848"></a><h3>
+<a name="idp88225024"></a><h3>
 <a name="boost.reference_wrapperconstruct-copy-destruct"></a><code class="computeroutput">reference_wrapper</code> 
         public
        construct/copy/destruct</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-<pre class="literallayout"><span class="keyword">explicit</span> <a name="idp18320160-bb"></a><span class="identifier">reference_wrapper</span><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span> t<span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">explicit</span> <a name="idp18116144-bb"></a><span class="identifier">reference_wrapper</span><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span> t<span class="special">)</span><span class="special">;</span></pre>
 <p>Constructs a <code class="computeroutput"><code class="computeroutput"><a class="link" href="reference_wrapper.html" title="Class template reference_wrapper">reference_wrapper</a></code></code> object that stores a reference to <code class="computeroutput">t</code>.</p>
 <p>Does not throw. </p>
 <p>
@@ -73,11 +73,11 @@
 </li></ol></div>
 </div>
 <div class="refsect2">
-<a name="idp82135824"></a><h3>
-<a name="idp18312272-bb"></a><code class="computeroutput">reference_wrapper</code> public member functions</h3>
+<a name="idp88236064"></a><h3>
+<a name="idp18107936-bb"></a><code class="computeroutput">reference_wrapper</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">BOOST_FORCEINLINE</span> <a name="idp18312832-bb"></a><span class="keyword">operator</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="identifier">BOOST_FORCEINLINE</span> <a name="idp18108496-bb"></a><span class="keyword">operator</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
 <p>
 </p>
 <p>Does not throw. </p>
@@ -95,7 +95,7 @@
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">&amp;</span> <a name="idp18315232-bb"></a><span class="identifier">get</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">&amp;</span> <a name="idp18110896-bb"></a><span class="identifier">get</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
 <p>
 </p>
 <p>Does not throw. </p>
@@ -113,7 +113,7 @@
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">*</span> <a name="idp18317632-bb"></a><span class="identifier">get_pointer</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="identifier">BOOST_FORCEINLINE</span> <span class="identifier">T</span> <span class="special">*</span> <a name="idp18113616-bb"></a><span class="identifier">get_pointer</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
 <p>
 </p>
 <p>Does not throw. </p>

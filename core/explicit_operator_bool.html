@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Header &lt;boost/core/explicit_operator_bool.hpp&gt;</title>
+<title>explicit_operator_bool</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="prev" href="enable_if.html" title="Header &lt;boost/core/enable_if.hpp&gt;">
-<link rel="next" href="ignore_unused.html" title="Header &lt;boost/core/ignore_unused.hpp&gt;">
+<link rel="prev" href="enable_if.html" title="enable_if">
+<link rel="next" href="ignore_unused.html" title="ignore_unused">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -24,19 +24,29 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.explicit_operator_bool"></a><a class="link" href="explicit_operator_bool.html" title="Header &lt;boost/core/explicit_operator_bool.hpp&gt;">Header &lt;boost/core/explicit_operator_bool.hpp&gt;</a>
+<a name="core.explicit_operator_bool"></a><a class="link" href="explicit_operator_bool.html" title="explicit_operator_bool">explicit_operator_bool</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
+<dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.authors">Authors</a></span></dt>
 <dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.overview">Overview</a></span></dt>
 <dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.examples">Examples</a></span></dt>
 <dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.history">History</a></span></dt>
 </dl></div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
+<a name="core.explicit_operator_bool.authors"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.authors" title="Authors">Authors</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+            Andrey Semashev
+          </li></ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
 <a name="core.explicit_operator_bool.overview"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.overview" title="Overview">Overview</a>
 </h3></div></div></div>
 <p>
-        <code class="computeroutput"><span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL</span><span class="special">()</span></code>, <code class="computeroutput"><span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL_NOEXCEPT</span><span class="special">()</span></code> and <code class="computeroutput"><span class="identifier">BOOST_CONSTEXPR_EXPLICIT_OPERATOR_BOOL</span><span class="special">()</span></code> are compatibility helper macros that expand
+        Header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">explicit_operator_bool</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>
+        provides <code class="computeroutput"><span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL</span><span class="special">()</span></code>, <code class="computeroutput"><span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL_NOEXCEPT</span><span class="special">()</span></code> and <code class="computeroutput"><span class="identifier">BOOST_CONSTEXPR_EXPLICIT_OPERATOR_BOOL</span><span class="special">()</span></code> compatibility helper macros that expand
         to an explicit conversion operator to <code class="computeroutput"><span class="keyword">bool</span></code>.
         For compilers not supporting explicit conversion operators introduced in
         C++11 the macros expand to a conversion operator that implements the <a href="http://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Safe_bool" target="_top">safe bool
@@ -55,6 +65,8 @@
         be declared <code class="computeroutput"><span class="keyword">constexpr</span></code> which
         requires the corresponding <code class="computeroutput"><span class="keyword">operator</span><span class="special">!()</span></code> to also be <code class="computeroutput"><span class="keyword">constexpr</span></code>.
       </p>
+<p>
+</p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span> <span class="keyword">typename</span> <span class="identifier">T</span> <span class="special">&gt;</span>
 <span class="keyword">class</span> <span class="identifier">my_ptr</span>
 <span class="special">{</span>
@@ -70,26 +82,33 @@
 <span class="special">};</span>
 </pre>
 <p>
+      </p>
+<p>
         Now <code class="computeroutput"><span class="identifier">my_ptr</span></code> can be used in
         conditional expressions, similarly to a regular pointer:
       </p>
+<p>
+</p>
 <pre class="programlisting"><span class="identifier">my_ptr</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="identifier">p</span><span class="special">;</span>
 <span class="keyword">if</span> <span class="special">(</span><span class="identifier">p</span><span class="special">)</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"true"</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
 </pre>
+<p>
+      </p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.explicit_operator_bool.history"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history" title="History">History</a>
 </h3></div></div></div>
-<h5>
-<a name="core.explicit_operator_bool.history.h0"></a>
-        <span class="phrase"><a name="core.explicit_operator_bool.history.boost_1_55"></a></span><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history.boost_1_55">boost
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.explicit_operator_bool.history.boost_1_55"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history.boost_1_55" title="boost 1.55">boost
         1.55</a>
-      </h5>
+</h4></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-            The macro was extracted from Boost.Log.
-          </li></ul></div>
+              The macro was extracted from Boost.Log.
+            </li></ul></div>
+</div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Header &lt;boost/core/checked_delete.hpp&gt;</title>
+<title>checked_delete</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="prev" href="addressof.html" title="Header &lt;boost/core/addressof.hpp&gt;">
-<link rel="next" href="enable_if.html" title="Header &lt;boost/core/enable_if.hpp&gt;">
+<link rel="prev" href="addressof.html" title="addressof">
+<link rel="next" href="enable_if.html" title="enable_if">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -24,9 +24,11 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.checked_delete"></a><a class="link" href="checked_delete.html" title="Header &lt;boost/core/checked_delete.hpp&gt;">Header &lt;boost/core/checked_delete.hpp&gt;</a>
+<a name="core.checked_delete"></a><a class="link" href="checked_delete.html" title="checked_delete">checked_delete</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
+<dt><span class="section"><a href="checked_delete.html#core.checked_delete.authors">Authors</a></span></dt>
+<dt><span class="section"><a href="checked_delete.html#core.checked_delete.overview">Overview</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.synopsis">Synopsis</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.checked_delete">checked_delete</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.checked_array_delete">checked_array_delete</a></span></dt>
@@ -34,29 +36,56 @@
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.checked_array_deleter">checked_array_deleter</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.acknowledgements">Acknowledgements</a></span></dt>
 </dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.checked_delete.authors"></a><a class="link" href="checked_delete.html#core.checked_delete.authors" title="Authors">Authors</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            Beman Dawes
+          </li>
+<li class="listitem">
+            Dave Abrahams
+          </li>
+<li class="listitem">
+            Vladimir Prus
+          </li>
+<li class="listitem">
+            Rainer Deyke
+          </li>
+<li class="listitem">
+            John Maddock
+          </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.checked_delete.overview"></a><a class="link" href="checked_delete.html#core.checked_delete.overview" title="Overview">Overview</a>
+</h3></div></div></div>
 <p>
-      The header <span class="bold"><strong>&lt;boost/checked_delete.hpp&gt;</strong></span>
-      defines two function templates, <span class="bold"><strong>checked_delete</strong></span>
-      and <span class="bold"><strong>checked_array_delete</strong></span>, and two class templates,
-      <span class="bold"><strong>checked_deleter</strong></span> and <span class="bold"><strong>checked_array_deleter</strong></span>.
-    </p>
+        The header <span class="bold"><strong>&lt;boost/checked_delete.hpp&gt;</strong></span>
+        defines two function templates, <span class="bold"><strong>checked_delete</strong></span>
+        and <span class="bold"><strong>checked_array_delete</strong></span>, and two class
+        templates, <span class="bold"><strong>checked_deleter</strong></span> and <span class="bold"><strong>checked_array_deleter</strong></span>.
+      </p>
 <p>
-      The C++ Standard allows, in 5.3.5/5, pointers to incomplete class types to
-      be deleted with a delete-expression. When the class has a non-trivial destructor,
-      or a class-specific operator delete, the behavior is undefined. Some compilers
-      issue a warning when an incomplete type is deleted, but unfortunately, not
-      all do, and programmers sometimes ignore or disable warnings.
-    </p>
+        The C++ Standard allows, in 5.3.5/5, pointers to incomplete class types to
+        be deleted with a delete-expression. When the class has a non-trivial destructor,
+        or a class-specific operator delete, the behavior is undefined. Some compilers
+        issue a warning when an incomplete type is deleted, but unfortunately, not
+        all do, and programmers sometimes ignore or disable warnings.
+      </p>
 <p>
-      A particularly troublesome case is when a smart pointer's destructor, such
-      as <span class="bold"><strong>boost::scoped_ptr&lt;T&gt;::~scoped_ptr</strong></span>,
-      is instantiated with an incomplete type. This can often lead to silent, hard
-      to track failures.
-    </p>
+        A particularly troublesome case is when a smart pointer's destructor, such
+        as <span class="bold"><strong>boost::scoped_ptr&lt;T&gt;::~scoped_ptr</strong></span>,
+        is instantiated with an incomplete type. This can often lead to silent, hard
+        to track failures.
+      </p>
 <p>
-      The supplied function and class templates can be used to prevent these problems,
-      as they require a complete type, and cause a compilation error otherwise.
-    </p>
+        The supplied function and class templates can be used to prevent these problems,
+        as they require a complete type, and cause a compilation error otherwise.
+      </p>
+</div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.checked_delete.synopsis"></a><a class="link" href="checked_delete.html#core.checked_delete.synopsis" title="Synopsis">Synopsis</a>

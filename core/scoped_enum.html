@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Headers &lt;boost/core/scoped_enum.hpp&gt;, &lt;boost/core/underlying_type.hpp&gt;</title>
+<title>scoped_enum</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="prev" href="../boost/unwrap_ref.html" title="Function template unwrap_ref">
-<link rel="next" href="swap.html" title="Header &lt;boost/core/swap.hpp&gt;">
+<link rel="next" href="swap.html" title="swap">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -24,19 +24,43 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.scoped_enum"></a><a class="link" href="scoped_enum.html" title="Headers &lt;boost/core/scoped_enum.hpp&gt;, &lt;boost/core/underlying_type.hpp&gt;">Headers &lt;boost/core/scoped_enum.hpp&gt;,
-    &lt;boost/core/underlying_type.hpp&gt;</a>
+<a name="core.scoped_enum"></a><a class="link" href="scoped_enum.html" title="scoped_enum">scoped_enum</a>
 </h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="scoped_enum.html#core.scoped_enum.authors">Authors</a></span></dt>
+<dt><span class="section"><a href="scoped_enum.html#core.scoped_enum.overview">Overview</a></span></dt>
+<dt><span class="section"><a href="scoped_enum.html#core.scoped_enum.deprecated_syntax">Deprecated syntax</a></span></dt>
+<dt><span class="section"><a href="scoped_enum.html#core.scoped_enum.acquiring_the_underlying_type_of_the_enum">Acquiring
+      the underlying type of the enum</a></span></dt>
+<dt><span class="section"><a href="scoped_enum.html#core.scoped_enum.acknowledgments">Acknowledgments</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.scoped_enum.authors"></a><a class="link" href="scoped_enum.html#core.scoped_enum.authors" title="Authors">Authors</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            Beman Dawes
+          </li>
+<li class="listitem">
+            Vicente J. Botet Escriba
+          </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.scoped_enum.overview"></a><a class="link" href="scoped_enum.html#core.scoped_enum.overview" title="Overview">Overview</a>
+</h3></div></div></div>
 <p>
-      The <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">scoped_enum</span><span class="special">.</span><span class="identifier">hpp</span></code> header
-      contains a number of macros that can be used to generate C++11 scoped enums
-      (7.2 [dcl.enum]) if the feature is supported by the compiler, otherwise emulate
-      it with C++03 constructs. The <code class="computeroutput"><span class="identifier">BOOST_NO_CXX11_SCOPED_ENUMS</span></code>
-      macro from Boost.Config is used to detect the feature support in the compiler.
-    </p>
+        The <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">scoped_enum</span><span class="special">.</span><span class="identifier">hpp</span></code> header
+        contains a number of macros that can be used to generate C++11 scoped enums
+        (7.2 [dcl.enum]) if the feature is supported by the compiler, otherwise emulate
+        it with C++03 constructs. The <code class="computeroutput"><span class="identifier">BOOST_NO_CXX11_SCOPED_ENUMS</span></code>
+        macro from Boost.Config is used to detect the feature support in the compiler.
+      </p>
 <p>
-      Some of the enumerations defined in the standard library are scoped enums.
-    </p>
+        Some of the enumerations defined in the standard library are scoped enums.
+      </p>
 <pre class="programlisting"><span class="keyword">enum</span> <span class="keyword">class</span> <span class="identifier">future_errc</span>
 <span class="special">{</span>
     <span class="identifier">broken_promise</span><span class="special">,</span>
@@ -46,8 +70,8 @@
 <span class="special">};</span>
 </pre>
 <p>
-      The user can portably declare such enumeration as follows:
-    </p>
+        The user can portably declare such enumeration as follows:
+      </p>
 <pre class="programlisting"><span class="identifier">BOOST_SCOPED_ENUM_DECLARE_BEGIN</span><span class="special">(</span><span class="identifier">future_errc</span><span class="special">)</span>
 <span class="special">{</span>
     <span class="identifier">broken_promise</span><span class="special">,</span>
@@ -58,14 +82,14 @@
 <span class="identifier">BOOST_SCOPED_ENUM_DECLARE_END</span><span class="special">(</span><span class="identifier">future_errc</span><span class="special">)</span>
 </pre>
 <p>
-      These macros allows to use <code class="computeroutput"><span class="identifier">future_errc</span></code>
-      in almost all the cases as an scoped enum.
-    </p>
+        These macros allows to use <code class="computeroutput"><span class="identifier">future_errc</span></code>
+        in almost all the cases as an scoped enum.
+      </p>
 <pre class="programlisting"><span class="identifier">future_errc</span> <span class="identifier">ev</span> <span class="special">=</span> <span class="identifier">future_errc</span><span class="special">::</span><span class="identifier">no_state</span><span class="special">;</span>
 </pre>
 <p>
-      It is possible to specify the underlying type of the enumeration:
-    </p>
+        It is possible to specify the underlying type of the enumeration:
+      </p>
 <pre class="programlisting"><span class="identifier">BOOST_SCOPED_ENUM_UT_DECLARE_BEGIN</span><span class="special">(</span><span class="identifier">future_errc</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span>
 <span class="special">{</span>
     <span class="identifier">broken_promise</span><span class="special">,</span>
@@ -76,45 +100,45 @@
 <span class="identifier">BOOST_SCOPED_ENUM_DECLARE_END</span><span class="special">(</span><span class="identifier">future_errc</span><span class="special">)</span>
 </pre>
 <p>
-      The enumeration supports explicit conversion from the underlying type.
-    </p>
+        The enumeration supports explicit conversion from the underlying type.
+      </p>
 <p>
-      The enumeration can be forward declared:
-    </p>
+        The enumeration can be forward declared:
+      </p>
 <pre class="programlisting"><span class="identifier">BOOST_SCOPED_ENUM_FORWARD_DECLARE</span><span class="special">(</span><span class="identifier">future_errc</span><span class="special">);</span>
 </pre>
 <p>
-      There are however some limitations:
-    </p>
+        There are however some limitations:
+      </p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-          The emulated scoped enum is not a C++ enum, so <code class="computeroutput"><span class="identifier">is_enum</span><span class="special">&lt;</span> <span class="identifier">future_errc</span>
-          <span class="special">&gt;</span></code> will be <code class="computeroutput"><span class="identifier">false_type</span></code>.
-        </li>
+            The emulated scoped enum is not a C++ enum, so <code class="computeroutput"><span class="identifier">is_enum</span><span class="special">&lt;</span> <span class="identifier">future_errc</span>
+            <span class="special">&gt;</span></code> will be <code class="computeroutput"><span class="identifier">false_type</span></code>.
+          </li>
 <li class="listitem">
-          The emulated scoped enum can not be used in switch nor in template arguments.
-          For these cases the user needs to use some helpers.
-        </li>
+            The emulated scoped enum can not be used in switch nor in template arguments.
+            For these cases the user needs to use some helpers.
+          </li>
 </ul></div>
 <p>
-      Instead of
-    </p>
+        Instead of
+      </p>
 <pre class="programlisting"><span class="keyword">switch</span> <span class="special">(</span><span class="identifier">ev</span><span class="special">)</span>
 <span class="special">{</span>
 <span class="keyword">case</span> <span class="identifier">future_errc</span><span class="special">::</span><span class="identifier">broken_promise</span><span class="special">:</span>
     <span class="comment">// ...</span>
 </pre>
 <p>
-      use
-    </p>
+        use
+      </p>
 <pre class="programlisting"><span class="keyword">switch</span> <span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">native_value</span><span class="special">(</span><span class="identifier">ev</span><span class="special">))</span>
 <span class="special">{</span>
 <span class="keyword">case</span> <span class="identifier">future_errc</span><span class="special">::</span><span class="identifier">broken_promise</span><span class="special">:</span>
     <span class="comment">// ...</span>
 </pre>
 <p>
-      And instead of
-    </p>
+        And instead of
+      </p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;&gt;</span>
 <span class="keyword">struct</span> <span class="identifier">is_error_code_enum</span><span class="special">&lt;</span> <span class="identifier">future_errc</span> <span class="special">&gt;</span> <span class="special">:</span>
     <span class="keyword">public</span> <span class="identifier">true_type</span>
@@ -122,8 +146,8 @@
 <span class="special">};</span>
 </pre>
 <p>
-      use
-    </p>
+        use
+      </p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;&gt;</span>
 <span class="keyword">struct</span> <span class="identifier">is_error_code_enum</span><span class="special">&lt;</span> <span class="identifier">BOOST_SCOPED_ENUM_NATIVE</span><span class="special">(</span><span class="identifier">future_errc</span><span class="special">)</span> <span class="special">&gt;</span> <span class="special">:</span>
     <span class="keyword">public</span> <span class="identifier">true_type</span>
@@ -131,13 +155,14 @@
 <span class="special">};</span>
 </pre>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-          Explicit conversion to the underlying type should be performed with <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_cast</span></code> instead of <code class="computeroutput"><span class="keyword">static_cast</span></code>:
-        </li></ul></div>
+            Explicit conversion to the underlying type should be performed with
+            <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_cast</span></code> instead of <code class="computeroutput"><span class="keyword">static_cast</span></code>:
+          </li></ul></div>
 <pre class="programlisting"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="identifier">val</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_cast</span><span class="special">&lt;</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">&gt;(</span><span class="identifier">ev</span><span class="special">);</span>
 </pre>
 <p>
-      Sample usage:
-    </p>
+        Sample usage:
+      </p>
 <pre class="programlisting"><span class="identifier">BOOST_SCOPED_ENUM_UT_DECLARE_BEGIN</span><span class="special">(</span><span class="identifier">algae</span><span class="special">,</span> <span class="keyword">char</span><span class="special">)</span> <span class="special">{</span> <span class="identifier">green</span><span class="special">,</span> <span class="identifier">red</span><span class="special">,</span> <span class="identifier">cyan</span> <span class="special">};</span> <span class="identifier">BOOST_SCOPED_ENUM_DECLARE_END</span><span class="special">(</span><span class="identifier">algae</span><span class="special">)</span>
 <span class="special">...</span>
 <span class="identifier">algae</span> <span class="identifier">sample</span><span class="special">(</span> <span class="identifier">algae</span><span class="special">::</span><span class="identifier">red</span> <span class="special">);</span>
@@ -146,16 +171,16 @@
 <span class="identifier">sample</span> <span class="special">=</span> <span class="identifier">algae</span><span class="special">::</span><span class="identifier">green</span><span class="special">;</span>
 <span class="identifier">foo</span><span class="special">(</span> <span class="identifier">algae</span><span class="special">::</span><span class="identifier">cyan</span> <span class="special">);</span>
 </pre>
-<h4>
-<a name="core.scoped_enum.h0"></a>
-      <span class="phrase"><a name="core.scoped_enum.deprecated_syntax"></a></span><a class="link" href="scoped_enum.html#core.scoped_enum.deprecated_syntax">Deprecated
-      syntax</a>
-    </h4>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.scoped_enum.deprecated_syntax"></a><a class="link" href="scoped_enum.html#core.scoped_enum.deprecated_syntax" title="Deprecated syntax">Deprecated syntax</a>
+</h3></div></div></div>
 <p>
-      In early versions of the header there were two ways to declare scoped enums,
-      with different pros and cons to each. The other way used a different set of
-      macros:
-    </p>
+        In early versions of the header there were two ways to declare scoped enums,
+        with different pros and cons to each. The other way used a different set
+        of macros:
+      </p>
 <pre class="programlisting"><span class="identifier">BOOST_SCOPED_ENUM_START</span><span class="special">(</span><span class="identifier">algae</span><span class="special">)</span>
 <span class="special">{</span>
     <span class="identifier">green</span><span class="special">,</span>
@@ -171,46 +196,52 @@
 <span class="identifier">foo</span><span class="special">(</span> <span class="identifier">algae</span><span class="special">::</span><span class="identifier">cyan</span> <span class="special">);</span>
 </pre>
 <p>
-      Here <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_START</span></code>
-      correcponds to <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_DECLARE_BEGIN</span></code>,
-      <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_END</span></code> to <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_DECLARE_END</span></code> and <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM</span></code> to <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_NATIVE</span></code>.
-      Note also the semicolon before <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_END</span></code>.
-    </p>
+        Here <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_START</span></code>
+        correcponds to <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_DECLARE_BEGIN</span></code>,
+        <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_END</span></code> to
+        <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_DECLARE_END</span></code>
+        and <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM</span></code> to
+        <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_NATIVE</span></code>.
+        Note also the semicolon before <code class="computeroutput"><span class="identifier">BOOST_SCOPED_ENUM_END</span></code>.
+      </p>
 <p>
-      In the current version these macros produce equivalent result to the ones described
-      above and are considered deprecated.
-    </p>
-<h4>
-<a name="core.scoped_enum.h1"></a>
-      <span class="phrase"><a name="core.scoped_enum.acquiring_the_underlying_type_of_the_enum"></a></span><a class="link" href="scoped_enum.html#core.scoped_enum.acquiring_the_underlying_type_of_the_enum">Acquiring
+        In the current version these macros produce equivalent result to the ones
+        described above and are considered deprecated.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.scoped_enum.acquiring_the_underlying_type_of_the_enum"></a><a class="link" href="scoped_enum.html#core.scoped_enum.acquiring_the_underlying_type_of_the_enum" title="Acquiring the underlying type of the enum">Acquiring
       the underlying type of the enum</a>
-    </h4>
+</h3></div></div></div>
 <p>
-      The header <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">underlying_type</span><span class="special">.</span><span class="identifier">hpp</span></code> defines
-      the metafunction <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_type</span></code> which can be used to obtain
-      the underlying type of the scoped enum. This metafunction has support for emulated
-      scoped enums declared with macros in <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">scoped_enum</span><span class="special">.</span><span class="identifier">hpp</span></code>. When native scoped enums are supported
-      by the compiler, this metafunction is equivalent to <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">underlying_type</span></code>.
-    </p>
+        The header <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">underlying_type</span><span class="special">.</span><span class="identifier">hpp</span></code> defines
+        the metafunction <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_type</span></code> which can be used to obtain
+        the underlying type of the scoped enum. This metafunction has support for
+        emulated scoped enums declared with macros in <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">scoped_enum</span><span class="special">.</span><span class="identifier">hpp</span></code>. When native scoped enums are supported
+        by the compiler, this metafunction is equivalent to <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">underlying_type</span></code>.
+      </p>
 <p>
-      Unfortunately, there are configurations which implement scoped enums but not
-      <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">underlying_type</span></code>. In this case <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_type</span></code>
-      has to be specialized by user. The macro <code class="computeroutput"><span class="identifier">BOOST_NO_UNDERLYING_TYPE</span></code>
-      is defined to indicate such cases.
-    </p>
-<h4>
-<a name="core.scoped_enum.h2"></a>
-      <span class="phrase"><a name="core.scoped_enum.acknowledgements"></a></span><a class="link" href="scoped_enum.html#core.scoped_enum.acknowledgements">Acknowledgements</a>
-    </h4>
+        Unfortunately, there are configurations which implement scoped enums but
+        not <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">underlying_type</span></code>. In this case <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">underlying_type</span></code> has to be specialized by
+        user. The macro <code class="computeroutput"><span class="identifier">BOOST_NO_UNDERLYING_TYPE</span></code>
+        is defined to indicate such cases.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.scoped_enum.acknowledgments"></a><a class="link" href="scoped_enum.html#core.scoped_enum.acknowledgments" title="Acknowledgments">Acknowledgments</a>
+</h3></div></div></div>
 <p>
-      Thanks to Andrey Semashev for pointing out that emulation through a namespace
-      could not be used within classes.
-    </p>
+        Thanks to Andrey Semashev for pointing out that emulation through a namespace
+        could not be used within classes.
+      </p>
 <p>
-      Helpful comments and suggestions were also made by Kjell Elster, Phil Endecott,
-      Joel Falcou, Mathias Gaunard, Felipe Magno de Almeida, Matt Calabrese, Vicente
-      Botet, and Daniel James.
-    </p>
+        Helpful comments and suggestions were also made by Kjell Elster, Phil Endecott,
+        Joel Falcou, Mathias Gaunard, Felipe Magno de Almeida, Matt Calabrese, Vicente
+        Botet, and Daniel James.
+      </p>
+</div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>

@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Header &lt;boost/core/ignore_unused.hpp&gt;</title>
+<title>ignore_unused</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="prev" href="explicit_operator_bool.html" title="Header &lt;boost/core/explicit_operator_bool.hpp&gt;">
-<link rel="next" href="lightweight_test.html" title="Header &lt;boost/core/lightweight_test.hpp&gt;">
+<link rel="prev" href="explicit_operator_bool.html" title="explicit_operator_bool">
+<link rel="next" href="lightweight_test.html" title="lightweight_test">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -24,39 +24,72 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.ignore_unused"></a><a class="link" href="ignore_unused.html" title="Header &lt;boost/core/ignore_unused.hpp&gt;">Header &lt;boost/core/ignore_unused.hpp&gt;</a>
+<a name="core.ignore_unused"></a><a class="link" href="ignore_unused.html" title="ignore_unused">ignore_unused</a>
 </h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="ignore_unused.html#core.ignore_unused.authors">Authors</a></span></dt>
+<dt><span class="section"><a href="ignore_unused.html#core.ignore_unused.header__boost_core_ignore_unused_hpp_">Header
+      &lt;boost/core/ignore_unused.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="ignore_unused.html#core.ignore_unused.acknowledgments">Acknowledgments</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.ignore_unused.authors"></a><a class="link" href="ignore_unused.html#core.ignore_unused.authors" title="Authors">Authors</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+            Adam Wulkiewicz
+          </li></ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.ignore_unused.header__boost_core_ignore_unused_hpp_"></a><a class="link" href="ignore_unused.html#core.ignore_unused.header__boost_core_ignore_unused_hpp_" title="Header &lt;boost/core/ignore_unused.hpp&gt;">Header
+      &lt;boost/core/ignore_unused.hpp&gt;</a>
+</h3></div></div></div>
 <p>
-      The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">ignore_unused</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code> defines
-      the function template <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">()</span></code>. It may be used to suppress the "unused
-      variable" or "unused local typedefs" compiler warnings when
-      the variable or typedef can't be removed or commented out, e.g. when some blocks
-      of the code are conditionally activated. C++11 variadic templates are used
-      if they're supported, otherwise they're emulated with overloads.
-    </p>
+        The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">ignore_unused</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>
+        defines the function template <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">()</span></code>. It may be used to suppress the "unused
+        variable" or "unused local typedefs" compiler warnings when
+        the variable or typedef can't be removed or commented out, e.g. when some
+        blocks of the code are conditionally activated. C++11 variadic templates
+        are used if they're supported, otherwise they're emulated with overloads.
+      </p>
 <p>
-      <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">()</span></code>
-      was contributed by Adam Wulkiewicz.
-    </p>
+        Usage
+      </p>
 <p>
-      Usage
-    </p>
+</p>
 <pre class="programlisting"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">(</span><span class="identifier">v1</span><span class="special">,</span> <span class="identifier">v2</span><span class="special">,</span> <span class="identifier">v3</span><span class="special">);</span>
 <span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">&lt;</span><span class="identifier">T1</span><span class="special">,</span> <span class="identifier">T2</span><span class="special">,</span> <span class="identifier">T3</span><span class="special">&gt;();</span>
 </pre>
 <p>
-      Example
-    </p>
+      </p>
+<p>
+        Example
+      </p>
+<p>
+</p>
 <pre class="programlisting"><span class="keyword">int</span> <span class="identifier">fun</span><span class="special">(</span> <span class="keyword">int</span> <span class="identifier">foo</span><span class="special">,</span> <span class="keyword">int</span> <span class="identifier">bar</span> <span class="special">)</span>
 <span class="special">{</span>
-   <span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">(</span><span class="identifier">bar</span><span class="special">);</span>
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">(</span><span class="identifier">bar</span><span class="special">);</span>
 <span class="preprocessor">#ifdef</span> <span class="identifier">ENABLE_DEBUG_OUTPUT</span>
-   <span class="keyword">if</span> <span class="special">(</span> <span class="identifier">foo</span> <span class="special">&lt;</span> <span class="identifier">bar</span> <span class="special">)</span>
-      <span class="identifier">std</span><span class="special">::</span><span class="identifier">cerr</span> <span class="special">&lt;&lt;</span> <span class="string">"warning! foo &lt; bar"</span><span class="special">;</span>
+    <span class="keyword">if</span> <span class="special">(</span> <span class="identifier">foo</span> <span class="special">&lt;</span> <span class="identifier">bar</span> <span class="special">)</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">cerr</span> <span class="special">&lt;&lt;</span> <span class="string">"warning! foo &lt; bar"</span><span class="special">;</span>
 <span class="preprocessor">#endif</span>
-   <span class="keyword">return</span> <span class="identifier">foo</span> <span class="special">+</span> <span class="number">2</span><span class="special">;</span>
+    <span class="keyword">return</span> <span class="identifier">foo</span> <span class="special">+</span> <span class="number">2</span><span class="special">;</span>
 <span class="special">}</span>
 </pre>
+<p>
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.ignore_unused.acknowledgments"></a><a class="link" href="ignore_unused.html#core.ignore_unused.acknowledgments" title="Acknowledgments">Acknowledgments</a>
+</h3></div></div></div>
+<p>
+        <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">ignore_unused</span><span class="special">()</span></code>
+        was contributed by Adam Wulkiewicz.
+      </p>
+</div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>

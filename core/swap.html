@@ -1,12 +1,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Header &lt;boost/core/swap.hpp&gt;</title>
+<title>swap</title>
 <link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="prev" href="scoped_enum.html" title="Headers &lt;boost/core/scoped_enum.hpp&gt;, &lt;boost/core/underlying_type.hpp&gt;">
+<link rel="prev" href="scoped_enum.html" title="scoped_enum">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -23,9 +23,11 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
-<a name="core.swap"></a><a class="link" href="swap.html" title="Header &lt;boost/core/swap.hpp&gt;">Header &lt;boost/core/swap.hpp&gt;</a>
+<a name="core.swap"></a><a class="link" href="swap.html" title="swap">swap</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
+<dt><span class="section"><a href="swap.html#core.swap.authors">Authors</a></span></dt>
+<dt><span class="section"><a href="swap.html#core.swap.header__boost_core_swap_hpp_">Header &lt;boost/core/swap.hpp&gt;</a></span></dt>
 <dt><span class="section"><a href="swap.html#core.swap.introduction">Introduction</a></span></dt>
 <dt><span class="section"><a href="swap.html#core.swap.rationale">Rationale</a></span></dt>
 <dt><span class="section"><a href="swap.html#core.swap.exception_safety">Exception Safety</a></span></dt>
@@ -33,11 +35,34 @@
 <dt><span class="section"><a href="swap.html#core.swap.portability">Portability</a></span></dt>
 <dt><span class="section"><a href="swap.html#core.swap.credits">Credits</a></span></dt>
 </dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.swap.authors"></a><a class="link" href="swap.html#core.swap.authors" title="Authors">Authors</a>
+</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            Niels Dekker
+          </li>
+<li class="listitem">
+            Joseph Gauterin
+          </li>
+<li class="listitem">
+            Steven Watanabe
+          </li>
+<li class="listitem">
+            Eric Niebler
+          </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.swap.header__boost_core_swap_hpp_"></a><a class="link" href="swap.html#core.swap.header__boost_core_swap_hpp_" title="Header &lt;boost/core/swap.hpp&gt;">Header &lt;boost/core/swap.hpp&gt;</a>
+</h3></div></div></div>
 <p>
-      <code class="computeroutput"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
-      <span class="keyword">void</span> <span class="identifier">swap</span><span class="special">(</span><span class="identifier">T</span><span class="special">&amp;</span>
-      <span class="identifier">left</span><span class="special">,</span> <span class="identifier">T</span><span class="special">&amp;</span> <span class="identifier">right</span><span class="special">);</span></code>
-    </p>
+        <code class="computeroutput"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">void</span> <span class="identifier">swap</span><span class="special">(</span><span class="identifier">T</span><span class="special">&amp;</span> <span class="identifier">left</span><span class="special">,</span> <span class="identifier">T</span><span class="special">&amp;</span>
+        <span class="identifier">right</span><span class="special">);</span></code>
+      </p>
+</div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.swap.introduction"></a><a class="link" href="swap.html#core.swap.introduction" title="Introduction">Introduction</a>
