@@ -7,7 +7,7 @@
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="prev" href="addressof.html" title="addressof">
-<link rel="next" href="enable_if.html" title="enable_if">
+<link rel="next" href="demangle.html" title="demangle">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -20,14 +20,13 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="addressof.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="enable_if.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="addressof.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="demangle.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a name="core.checked_delete"></a><a class="link" href="checked_delete.html" title="checked_delete">checked_delete</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
-<dt><span class="section"><a href="checked_delete.html#core.checked_delete.authors">Authors</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.overview">Overview</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.synopsis">Synopsis</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.checked_delete">checked_delete</a></span></dt>
@@ -36,26 +35,25 @@
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.checked_array_deleter">checked_array_deleter</a></span></dt>
 <dt><span class="section"><a href="checked_delete.html#core.checked_delete.acknowledgements">Acknowledgements</a></span></dt>
 </dl></div>
-<div class="section">
+<div class="simplesect">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.checked_delete.authors"></a><a class="link" href="checked_delete.html#core.checked_delete.authors" title="Authors">Authors</a>
-</h3></div></div></div>
+<a name="idp101430160"></a>Authors</h3></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-            Beman Dawes
-          </li>
+          Beman Dawes
+        </li>
 <li class="listitem">
-            Dave Abrahams
-          </li>
+          Dave Abrahams
+        </li>
 <li class="listitem">
-            Vladimir Prus
-          </li>
+          Vladimir Prus
+        </li>
 <li class="listitem">
-            Rainer Deyke
-          </li>
+          Rainer Deyke
+        </li>
 <li class="listitem">
-            John Maddock
-          </li>
+          John Maddock
+        </li>
 </ul></div>
 </div>
 <div class="section">
@@ -63,10 +61,11 @@
 <a name="core.checked_delete.overview"></a><a class="link" href="checked_delete.html#core.checked_delete.overview" title="Overview">Overview</a>
 </h3></div></div></div>
 <p>
-        The header <span class="bold"><strong>&lt;boost/checked_delete.hpp&gt;</strong></span>
-        defines two function templates, <span class="bold"><strong>checked_delete</strong></span>
-        and <span class="bold"><strong>checked_array_delete</strong></span>, and two class
-        templates, <span class="bold"><strong>checked_deleter</strong></span> and <span class="bold"><strong>checked_array_deleter</strong></span>.
+        The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">checked_delete</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>
+        defines two function templates, <code class="computeroutput"><span class="identifier">checked_delete</span></code>
+        and <code class="computeroutput"><span class="identifier">checked_array_delete</span></code>,
+        and two class templates, <code class="computeroutput"><span class="identifier">checked_deleter</span></code>
+        and <code class="computeroutput"><span class="identifier">checked_array_deleter</span></code>.
       </p>
 <p>
         The C++ Standard allows, in 5.3.5/5, pointers to incomplete class types to
@@ -77,9 +76,8 @@
       </p>
 <p>
         A particularly troublesome case is when a smart pointer's destructor, such
-        as <span class="bold"><strong>boost::scoped_ptr&lt;T&gt;::~scoped_ptr</strong></span>,
-        is instantiated with an incomplete type. This can often lead to silent, hard
-        to track failures.
+        as <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">scoped_ptr</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;::~</span><span class="identifier">scoped_ptr</span></code>, is instantiated with an incomplete
+        type. This can often lead to silent, hard to track failures.
       </p>
 <p>
         The supplied function and class templates can be used to prevent these problems,
@@ -90,8 +88,6 @@
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.checked_delete.synopsis"></a><a class="link" href="checked_delete.html#core.checked_delete.synopsis" title="Synopsis">Synopsis</a>
 </h3></div></div></div>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">boost</span>
 <span class="special">{</span>
     <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">void</span> <span class="identifier">checked_delete</span><span class="special">(</span><span class="identifier">T</span> <span class="special">*</span> <span class="identifier">p</span><span class="special">);</span>
@@ -100,8 +96,6 @@
     <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">checked_array_deleter</span><span class="special">;</span>
 <span class="special">}</span>
 </pre>
-<p>
-      </p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
@@ -109,12 +103,12 @@
 </h3></div></div></div>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="core.checked_delete.checked_delete.template_class_t__void_checked_delete_t___p__"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_delete.template_class_t__void_checked_delete_t___p__" title="template&lt;class T&gt; void checked_delete(T * p);">template&lt;class
+<a name="core.checked_delete.checked_delete.template_class_t_void_checked_de"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_delete.template_class_t_void_checked_de" title="template&lt;class T&gt; void checked_delete(T * p);">template&lt;class
         T&gt; void checked_delete(T * p);</a>
 </h4></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-              <span class="bold"><strong>Requires:</strong></span> <span class="bold"><strong>T</strong></span>
+              <span class="bold"><strong>Requires:</strong></span> <code class="computeroutput"><span class="identifier">T</span></code>
               must be a complete type. The expression <code class="computeroutput"><span class="keyword">delete</span>
               <span class="identifier">p</span></code> must be well-formed.
             </li>
@@ -131,12 +125,12 @@
 </h3></div></div></div>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="core.checked_delete.checked_array_delete.template_class_t__void_checked_array_delete_t___p__"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_array_delete.template_class_t__void_checked_array_delete_t___p__" title="template&lt;class T&gt; void checked_array_delete(T * p);">template&lt;class
+<a name="core.checked_delete.checked_array_delete.template_class_t_void_checked_ar"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_array_delete.template_class_t_void_checked_ar" title="template&lt;class T&gt; void checked_array_delete(T * p);">template&lt;class
         T&gt; void checked_array_delete(T * p);</a>
 </h4></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-              <span class="bold"><strong>Requires:</strong></span> <span class="bold"><strong>T</strong></span>
+              <span class="bold"><strong>Requires:</strong></span> <code class="computeroutput"><span class="identifier">T</span></code>
               must be a complete type. The expression <code class="computeroutput"><span class="keyword">delete</span>
               <span class="special">[]</span> <span class="identifier">p</span></code>
               must be well-formed.
@@ -152,8 +146,6 @@
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.checked_delete.checked_deleter"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_deleter" title="checked_deleter">checked_deleter</a>
 </h3></div></div></div>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">checked_deleter</span>
 <span class="special">{</span>
     <span class="keyword">typedef</span> <span class="keyword">void</span> <span class="identifier">result_type</span><span class="special">;</span>
@@ -161,11 +153,9 @@
     <span class="keyword">void</span> <span class="keyword">operator</span><span class="special">()(</span><span class="identifier">T</span> <span class="special">*</span> <span class="identifier">p</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
 <span class="special">};</span>
 </pre>
-<p>
-      </p>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="core.checked_delete.checked_deleter.void_checked_deleter_t___operator___t___p__const_"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_deleter.void_checked_deleter_t___operator___t___p__const_" title="void checked_deleter&lt;T&gt;::operator()(T * p) const;">void
+<a name="core.checked_delete.checked_deleter.void_checked_deleter_t_operator_"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_deleter.void_checked_deleter_t_operator_" title="void checked_deleter&lt;T&gt;::operator()(T * p) const;">void
         checked_deleter&lt;T&gt;::operator()(T * p) const;</a>
 </h4></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
@@ -185,8 +175,6 @@
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.checked_delete.checked_array_deleter"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_array_deleter" title="checked_array_deleter">checked_array_deleter</a>
 </h3></div></div></div>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">checked_array_deleter</span>
 <span class="special">{</span>
     <span class="keyword">typedef</span> <span class="keyword">void</span> <span class="identifier">result_type</span><span class="special">;</span>
@@ -194,11 +182,9 @@
     <span class="keyword">void</span> <span class="keyword">operator</span><span class="special">()(</span><span class="identifier">T</span> <span class="special">*</span> <span class="identifier">p</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
 <span class="special">};</span>
 </pre>
-<p>
-      </p>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="core.checked_delete.checked_array_deleter.void_checked_array_deleter_t___operator___t___p__const_"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_array_deleter.void_checked_array_deleter_t___operator___t___p__const_" title="void checked_array_deleter&lt;T&gt;::operator()(T * p) const;">void
+<a name="core.checked_delete.checked_array_deleter.void_checked_array_deleter_t_ope"></a><a class="link" href="checked_delete.html#core.checked_delete.checked_array_deleter.void_checked_array_deleter_t_ope" title="void checked_array_deleter&lt;T&gt;::operator()(T * p) const;">void
         checked_array_deleter&lt;T&gt;::operator()(T * p) const;</a>
 </h4></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
@@ -220,11 +206,11 @@
 <a name="core.checked_delete.acknowledgements"></a><a class="link" href="checked_delete.html#core.checked_delete.acknowledgements" title="Acknowledgements">Acknowledgements</a>
 </h3></div></div></div>
 <p>
-        The function templates <span class="bold"><strong>checked_delete</strong></span> and
-        <span class="bold"><strong>checked_array_delete</strong></span> were originally part
-        of <span class="bold"><strong>&lt;boost/utility.hpp&gt;</strong></span>, and the documentation
-        acknowledged Beman Dawes, Dave Abrahams, Vladimir Prus, Rainer Deyke, John
-        Maddock, and others as contributors.
+        The function templates <code class="computeroutput"><span class="identifier">checked_delete</span></code>
+        and <code class="computeroutput"><span class="identifier">checked_array_delete</span></code>
+        were originally part of <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">utility</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>,
+        and the documentation acknowledged Beman Dawes, Dave Abrahams, Vladimir Prus,
+        Rainer Deyke, John Maddock, and others as contributors.
       </p>
 </div>
 </div>
@@ -238,7 +224,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="addressof.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="enable_if.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="addressof.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="demangle.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

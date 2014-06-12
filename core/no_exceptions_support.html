@@ -26,29 +26,40 @@
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a name="core.no_exceptions_support"></a><a class="link" href="no_exceptions_support.html" title="no_exceptions_support">no_exceptions_support</a>
 </h2></div></div></div>
-<div class="toc"><dl class="toc">
-<dt><span class="section"><a href="no_exceptions_support.html#core.no_exceptions_support.authors">Authors</a></span></dt>
-<dt><span class="section"><a href="no_exceptions_support.html#core.no_exceptions_support.header__boost_core_no_exceptions_support_hpp_">Header
-      &lt;boost/core/no_exceptions_support.hpp&gt;</a></span></dt>
-</dl></div>
-<div class="section">
+<div class="toc"><dl class="toc"><dt><span class="section"><a href="no_exceptions_support.html#core.no_exceptions_support.header_boost_core_no_exceptions_">Header
+      &lt;boost/core/no_exceptions_support.hpp&gt;</a></span></dt></dl></div>
+<div class="simplesect">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.no_exceptions_support.authors"></a><a class="link" href="no_exceptions_support.html#core.no_exceptions_support.authors" title="Authors">Authors</a>
-</h3></div></div></div>
+<a name="idp102764528"></a>Authors</h3></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-            Pavel Vozenilek
-          </li></ul></div>
+          Pavel Vozenilek
+        </li></ul></div>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.no_exceptions_support.header__boost_core_no_exceptions_support_hpp_"></a><a class="link" href="no_exceptions_support.html#core.no_exceptions_support.header__boost_core_no_exceptions_support_hpp_" title="Header &lt;boost/core/no_exceptions_support.hpp&gt;">Header
+<a name="core.no_exceptions_support.header_boost_core_no_exceptions_"></a><a class="link" href="no_exceptions_support.html#core.no_exceptions_support.header_boost_core_no_exceptions_" title="Header &lt;boost/core/no_exceptions_support.hpp&gt;">Header
       &lt;boost/core/no_exceptions_support.hpp&gt;</a>
 </h3></div></div></div>
 <p>
-        Example of use:
+        The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">no_exceptions_support</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>
+        defines macros for use in code that needs to be portable to environments
+        that do not have support for C++ exceptions.
       </p>
-<p>
-</p>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.no_exceptions_support.header_boost_core_no_exceptions_.synopsis"></a><a class="link" href="no_exceptions_support.html#core.no_exceptions_support.header_boost_core_no_exceptions_.synopsis" title="Synopsis">Synopsis</a>
+</h4></div></div></div>
+<pre class="programlisting"><span class="preprocessor">#define</span> <span class="identifier">BOOST_TRY</span> <span class="comment">/*unspecified*/</span>
+<span class="preprocessor">#define</span> <span class="identifier">BOOST_CATCH</span><span class="special">(</span><span class="identifier">x</span><span class="special">)</span> <span class="comment">/*unspecified*/</span>
+<span class="preprocessor">#define</span> <span class="identifier">BOOST_CATCH_END</span> <span class="comment">/*unspecified*/</span>
+<span class="preprocessor">#define</span> <span class="identifier">BOOST_RETHROW</span> <span class="comment">/*unspecified*/</span>
+</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.no_exceptions_support.header_boost_core_no_exceptions_.example_use"></a><a class="link" href="no_exceptions_support.html#core.no_exceptions_support.header_boost_core_no_exceptions_.example_use" title="Example Use">Example
+        Use</a>
+</h4></div></div></div>
 <pre class="programlisting"><span class="keyword">void</span> <span class="identifier">foo</span><span class="special">()</span> <span class="special">{</span>
   <span class="identifier">BOOST_TRY</span> <span class="special">{</span>
     <span class="special">...</span>
@@ -62,12 +73,8 @@
 <span class="special">}</span>
 </pre>
 <p>
-      </p>
-<p>
-        With exception support enabled it will expand into:
-      </p>
-<p>
-</p>
+          With exception support enabled it will expand into:
+        </p>
 <pre class="programlisting"><span class="keyword">void</span> <span class="identifier">foo</span><span class="special">()</span> <span class="special">{</span>
   <span class="special">{</span> <span class="keyword">try</span> <span class="special">{</span>
     <span class="special">...</span>
@@ -81,12 +88,8 @@
 <span class="special">}</span>
 </pre>
 <p>
-      </p>
-<p>
-        With exception support disabled it will expand into:
-      </p>
-<p>
-</p>
+          With exception support disabled it will expand into:
+        </p>
 <pre class="programlisting"><span class="keyword">void</span> <span class="identifier">foo</span><span class="special">()</span> <span class="special">{</span>
   <span class="special">{</span> <span class="keyword">if</span><span class="special">(</span><span class="keyword">true</span><span class="special">)</span> <span class="special">{</span>
     <span class="special">...</span>
@@ -98,8 +101,7 @@
   <span class="special">}</span>
 <span class="special">}</span>
 </pre>
-<p>
-      </p>
+</div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

@@ -27,18 +27,16 @@
 <a name="core.explicit_operator_bool"></a><a class="link" href="explicit_operator_bool.html" title="explicit_operator_bool">explicit_operator_bool</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
-<dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.authors">Authors</a></span></dt>
 <dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.overview">Overview</a></span></dt>
 <dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.examples">Examples</a></span></dt>
 <dt><span class="section"><a href="explicit_operator_bool.html#core.explicit_operator_bool.history">History</a></span></dt>
 </dl></div>
-<div class="section">
+<div class="simplesect">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.explicit_operator_bool.authors"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.authors" title="Authors">Authors</a>
-</h3></div></div></div>
+<a name="idp102333456"></a>Authors</h3></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-            Andrey Semashev
-          </li></ul></div>
+          Andrey Semashev
+        </li></ul></div>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
@@ -65,8 +63,6 @@
         be declared <code class="computeroutput"><span class="keyword">constexpr</span></code> which
         requires the corresponding <code class="computeroutput"><span class="keyword">operator</span><span class="special">!()</span></code> to also be <code class="computeroutput"><span class="keyword">constexpr</span></code>.
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span> <span class="keyword">typename</span> <span class="identifier">T</span> <span class="special">&gt;</span>
 <span class="keyword">class</span> <span class="identifier">my_ptr</span>
 <span class="special">{</span>
@@ -82,33 +78,42 @@
 <span class="special">};</span>
 </pre>
 <p>
-      </p>
-<p>
         Now <code class="computeroutput"><span class="identifier">my_ptr</span></code> can be used in
         conditional expressions, similarly to a regular pointer:
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="identifier">my_ptr</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="identifier">p</span><span class="special">;</span>
 <span class="keyword">if</span> <span class="special">(</span><span class="identifier">p</span><span class="special">)</span>
     <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"true"</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
 </pre>
-<p>
-      </p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
 <a name="core.explicit_operator_bool.history"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history" title="History">History</a>
 </h3></div></div></div>
-<div class="section">
-<div class="titlepage"><div><div><h4 class="title">
-<a name="core.explicit_operator_bool.history.boost_1_55"></a><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history.boost_1_55" title="boost 1.55">boost
+<h5>
+<a name="core.explicit_operator_bool.history.h0"></a>
+        <span class="phrase"><a name="core.explicit_operator_bool.history.boost_1_56"></a></span><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history.boost_1_56">boost
+        1.56</a>
+      </h5>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+            Added new macros <code class="computeroutput"><span class="identifier">BOOST_EXPLICIT_OPERATOR_BOOL_NOEXCEPT</span></code>
+            and <code class="computeroutput"><span class="identifier">BOOST_CONSTEXPR_EXPLICIT_OPERATOR_BOOL</span></code>
+            to define <code class="computeroutput"><span class="keyword">noexcept</span></code> and
+            <code class="computeroutput"><span class="keyword">constexpr</span></code> operators.
+          </li>
+<li class="listitem">
+            The header moved to Boost.Core.
+          </li>
+</ul></div>
+<h5>
+<a name="core.explicit_operator_bool.history.h1"></a>
+        <span class="phrase"><a name="core.explicit_operator_bool.history.boost_1_55"></a></span><a class="link" href="explicit_operator_bool.html#core.explicit_operator_bool.history.boost_1_55">boost
         1.55</a>
-</h4></div></div></div>
+      </h5>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-              The macro was extracted from Boost.Log.
-            </li></ul></div>
-</div>
+            The macro was extracted from Boost.Log.
+          </li></ul></div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

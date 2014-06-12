@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>demangle</title>
+<link rel="stylesheet" href="http://boost.org/doc/libs/master/doc/src/boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
+<link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
+<link rel="prev" href="checked_delete.html" title="checked_delete">
+<link rel="next" href="enable_if.html" title="enable_if">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%"><tr>
+<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src="http://boost.org/doc/libs/master/boost.png"></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/index.html">Home</a></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/libs/libraries.htm">Libraries</a></td>
+<td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
+<td align="center"><a href="http://www.boost.org/users/faq.html">FAQ</a></td>
+<td align="center"><a href="http://boost.org/doc/libs/master/more/index.htm">More</a></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="checked_delete.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="enable_if.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="core.demangle"></a><a class="link" href="demangle.html" title="demangle">demangle</a>
+</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="demangle.html#core.demangle.header_boost_core_demangle_hpp">Header
+      &lt;boost/core/demangle.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="demangle.html#core.demangle.acknowledgments">Acknowledgments</a></span></dt>
+</dl></div>
+<div class="simplesect">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="idp101564976"></a>Authors</h3></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+          Peter Dimov
+        </li>
+<li class="listitem">
+          Andrey Semashev
+        </li>
+</ul></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.demangle.header_boost_core_demangle_hpp"></a><a class="link" href="demangle.html#core.demangle.header_boost_core_demangle_hpp" title="Header &lt;boost/core/demangle.hpp&gt;">Header
+      &lt;boost/core/demangle.hpp&gt;</a>
+</h3></div></div></div>
+<p>
+        The header <code class="computeroutput"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">demangle</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span></code>
+        defines the function <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">core</span><span class="special">::</span><span class="identifier">demangle</span></code>.
+        It takes a mangled string such as those returned by <code class="computeroutput"><span class="keyword">typeid</span><span class="special">(</span><span class="identifier">T</span><span class="special">).</span><span class="identifier">name</span><span class="special">()</span></code>
+        on certain implementations such as <code class="computeroutput"><span class="identifier">g</span><span class="special">++</span></code>, and returns its demangled, human-readable,
+        form.
+      </p>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.demangle.header_boost_core_demangle_hpp.synopsis"></a><a class="link" href="demangle.html#core.demangle.header_boost_core_demangle_hpp.synopsis" title="Synopsis">Synopsis</a>
+</h4></div></div></div>
+<pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">boost</span>
+<span class="special">{</span>
+
+<span class="keyword">namespace</span> <span class="identifier">core</span>
+<span class="special">{</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">demangle</span><span class="special">(</span> <span class="keyword">char</span> <span class="keyword">const</span> <span class="special">*</span> <span class="identifier">name</span> <span class="special">);</span>
+<span class="special">}</span>
+
+<span class="special">}</span>
+</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.demangle.header_boost_core_demangle_hpp.example"></a><a class="link" href="demangle.html#core.demangle.header_boost_core_demangle_hpp.example" title="Example">Example</a>
+</h4></div></div></div>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">demangle</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">typeinfo</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
+
+<span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">X</span>
+<span class="special">{</span>
+<span class="special">};</span>
+
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
+<span class="special">{</span>
+    <span class="keyword">char</span> <span class="keyword">const</span> <span class="special">*</span> <span class="identifier">name</span> <span class="special">=</span> <span class="keyword">typeid</span><span class="special">(</span> <span class="identifier">X</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="special">).</span><span class="identifier">name</span><span class="special">();</span>
+
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">name</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span> <span class="comment">// prints 1XIiE</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">core</span><span class="special">::</span><span class="identifier">demangle</span><span class="special">(</span> <span class="identifier">name</span> <span class="special">)</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span> <span class="comment">// prints X&lt;int&gt;</span>
+<span class="special">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="core.demangle.acknowledgments"></a><a class="link" href="demangle.html#core.demangle.acknowledgments" title="Acknowledgments">Acknowledgments</a>
+</h3></div></div></div>
+<p>
+        The implementation of <code class="computeroutput"><span class="identifier">core</span><span class="special">::</span><span class="identifier">demangle</span></code>
+        was taken from <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">exception</span><span class="special">/</span><span class="identifier">detail</span><span class="special">/</span><span class="identifier">type_info</span><span class="special">.</span><span class="identifier">hpp</span></code>, which in turn was adapted from <code class="computeroutput"><span class="identifier">boost</span><span class="special">/</span><span class="identifier">units</span><span class="special">/</span><span class="identifier">detail</span><span class="special">/</span><span class="identifier">utility</span><span class="special">.</span><span class="identifier">hpp</span></code>.
+      </p>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><div class="copyright-footer">Copyright &#169; 2014 Peter Dimov<br>Copyright &#169; 2014 Glen Fernandes<br>Copyright &#169; 2014 Andrey Semashev<p>
+        Distributed under the <a href="http://boost.org/LICENSE_1_0.txt" target="_top">Boost
+        Software License, Version 1.0</a>.
+      </p>
+</div></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="checked_delete.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="enable_if.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

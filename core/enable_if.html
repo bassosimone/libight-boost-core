@@ -6,7 +6,7 @@
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
 <link rel="up" href="../index.html" title="Chapter&#160;1.&#160;Boost.Core">
-<link rel="prev" href="checked_delete.html" title="checked_delete">
+<link rel="prev" href="demangle.html" title="demangle">
 <link rel="next" href="explicit_operator_bool.html" title="explicit_operator_bool">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -20,14 +20,13 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="checked_delete.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="explicit_operator_bool.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="demangle.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="explicit_operator_bool.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a name="core.enable_if"></a><a class="link" href="enable_if.html" title="enable_if">enable_if</a>
 </h2></div></div></div>
 <div class="toc"><dl class="toc">
-<dt><span class="section"><a href="enable_if.html#core.enable_if.authors">Authors</a></span></dt>
 <dt><span class="section"><a href="enable_if.html#core.enable_if.introduction">Introduction</a></span></dt>
 <dt><span class="section"><a href="enable_if.html#core.enable_if.the_enable_if_templates">The enable_if
       templates</a></span></dt>
@@ -35,20 +34,19 @@
 <dt><span class="section"><a href="enable_if.html#core.enable_if.acknowledgements">Acknowledgements</a></span></dt>
 <dt><span class="section"><a href="enable_if.html#core.enable_if.references">References</a></span></dt>
 </dl></div>
-<div class="section">
+<div class="simplesect">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.enable_if.authors"></a><a class="link" href="enable_if.html#core.enable_if.authors" title="Authors">Authors</a>
-</h3></div></div></div>
+<a name="idp101654176"></a>Authors</h3></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-            Jaakko J&#228;rvi
-          </li>
+          Jaakko J&#228;rvi
+        </li>
 <li class="listitem">
-            Jeremiah Willcock
-          </li>
+          Jeremiah Willcock
+        </li>
 <li class="listitem">
-            Andrew Lumsdaine
-          </li>
+          Andrew Lumsdaine
+        </li>
 </ul></div>
 </div>
 <div class="section">
@@ -68,11 +66,9 @@
       </p>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="core.enable_if.introduction.header__boost_core_enable_if_hpp_"></a><a class="link" href="enable_if.html#core.enable_if.introduction.header__boost_core_enable_if_hpp_" title="Header &lt;boost/core/enable_if.hpp&gt;">Header
+<a name="core.enable_if.introduction.header_boost_core_enable_if_hpp"></a><a class="link" href="enable_if.html#core.enable_if.introduction.header_boost_core_enable_if_hpp" title="Header &lt;boost/core/enable_if.hpp&gt;">Header
         &lt;boost/core/enable_if.hpp&gt;</a>
 </h4></div></div></div>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">boost</span> <span class="special">{</span>
     <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">Cond</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">T</span> <span class="special">=</span> <span class="keyword">void</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">enable_if</span><span class="special">;</span>
     <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">Cond</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">T</span> <span class="special">=</span> <span class="keyword">void</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">disable_if</span><span class="special">;</span>
@@ -85,8 +81,6 @@
     <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">bool</span> <span class="identifier">B</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">lazy_disable_if_c</span><span class="special">;</span>
 <span class="special">}</span>
 </pre>
-<p>
-        </p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
@@ -101,15 +95,11 @@
           error. The following example, taken from <a class="link" href="enable_if.html#REF1">[1]</a>,
           demonstrates why this is important:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">int</span> <span class="identifier">negate</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">i</span><span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="special">-</span><span class="identifier">i</span><span class="special">;</span> <span class="special">}</span>
 
 <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">F</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">F</span><span class="special">::</span><span class="identifier">result_type</span> <span class="identifier">negate</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">F</span><span class="special">&amp;</span> <span class="identifier">f</span><span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="special">-</span><span class="identifier">f</span><span class="special">();</span> <span class="special">}</span>
 </pre>
-<p>
-        </p>
 <p>
           Suppose the compiler encounters the call <code class="computeroutput"><span class="identifier">negate</span><span class="special">(</span><span class="number">1</span><span class="special">)</span></code>.
           The first definition is obviously a better match, but the compiler must
@@ -117,12 +107,8 @@
           to find this out. Instantiating the latter definition with <code class="computeroutput"><span class="identifier">F</span></code> as <code class="computeroutput"><span class="keyword">int</span></code>
           would result in:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">int</span><span class="special">::</span><span class="identifier">result_type</span> <span class="identifier">negate</span><span class="special">(</span><span class="keyword">const</span> <span class="keyword">int</span><span class="special">&amp;);</span>
 </pre>
-<p>
-        </p>
 <p>
           where the return type is invalid. If this were an error, adding an unrelated
           function template (that was never called) could break otherwise valid code.
@@ -164,8 +150,6 @@
         unqualified but they are in the <code class="computeroutput"><span class="identifier">boost</span></code>
         namespace).
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">bool</span> <span class="identifier">B</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">T</span> <span class="special">=</span> <span class="keyword">void</span><span class="special">&gt;</span>
 <span class="keyword">struct</span> <span class="identifier">enable_if_c</span> <span class="special">{</span>
     <span class="keyword">typedef</span> <span class="identifier">T</span> <span class="identifier">type</span><span class="special">;</span>
@@ -177,8 +161,6 @@
 <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">Cond</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">T</span> <span class="special">=</span> <span class="keyword">void</span><span class="special">&gt;</span>
 <span class="keyword">struct</span> <span class="identifier">enable_if</span> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">enable_if_c</span><span class="special">&lt;</span><span class="identifier">Cond</span><span class="special">::</span><span class="identifier">value</span><span class="special">,</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="special">{};</span>
 </pre>
-<p>
-      </p>
 <p>
         An instantiation of the <code class="computeroutput"><span class="identifier">enable_if_c</span></code>
         template with the parameter <code class="computeroutput"><span class="identifier">B</span></code>
@@ -195,28 +177,20 @@
         types (according to the classification of the Boost <span class="bold"><strong>type_traits</strong></span>
         library):
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">enable_if_c</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">value</span><span class="special">,</span> <span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">t</span><span class="special">;</span> <span class="special">}</span>
 </pre>
-<p>
-      </p>
 <p>
         The <code class="computeroutput"><span class="identifier">disable_if_c</span></code> template
         is provided as well, and has the same functionality as <code class="computeroutput"><span class="identifier">enable_if_c</span></code>
         except for the negated condition. The following function is enabled for all
         non-arithmetic types.
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">disable_if_c</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">value</span><span class="special">,</span> <span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">bar</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">t</span><span class="special">;</span> <span class="special">}</span>
 </pre>
-<p>
-      </p>
 <p>
         For easier syntax in some cases and interoperation with Boost.MPL we provide
         versions of the <code class="computeroutput"><span class="identifier">enable_if</span></code>
@@ -230,14 +204,10 @@
         <code class="computeroutput"><span class="identifier">foo</span></code> can be alternatively
         written as:
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;,</span> <span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">t</span><span class="special">;</span> <span class="special">}</span>
 </pre>
-<p>
-      </p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
@@ -270,14 +240,10 @@
         that works via an extra function parameter, the <code class="computeroutput"><span class="identifier">foo</span></code>
         function in the previous section could also be written as:
       </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="identifier">T</span> <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">,</span>
     <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;</span> <span class="special">&gt;::</span><span class="identifier">type</span><span class="special">*</span> <span class="identifier">dummy</span> <span class="special">=</span> <span class="number">0</span><span class="special">);</span>
 </pre>
-<p>
-      </p>
 <p>
         Hence, an extra parameter of type <code class="computeroutput"><span class="keyword">void</span><span class="special">*</span></code> is added, but it is given a default value
         to keep the parameter hidden from client code. Note that the second template
@@ -326,8 +292,6 @@
 <p>
           As an example:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">type_traits</span><span class="special">/</span><span class="identifier">is_arithmetic</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">type_traits</span><span class="special">/</span><span class="identifier">is_pointer</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">utility</span><span class="special">/</span><span class="identifier">enable_if</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
@@ -372,12 +336,10 @@
     <span class="keyword">struct</span> <span class="special">{}</span> <span class="identifier">fail_conversion</span> <span class="special">=</span> <span class="identifier">test_</span><span class="special">;</span>
 <span class="special">}</span>
 </pre>
-<p>
-        </p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="core.enable_if.using_enable_if.enabling_template_class_specializations"></a><a class="link" href="enable_if.html#core.enable_if.using_enable_if.enabling_template_class_specializations" title="Enabling template class specializations">Enabling
+<a name="core.enable_if.using_enable_if.enabling_template_class_speciali"></a><a class="link" href="enable_if.html#core.enable_if.using_enable_if.enabling_template_class_speciali" title="Enabling template class specializations">Enabling
         template class specializations</a>
 </h4></div></div></div>
 <p>
@@ -385,8 +347,6 @@
           needs to be added for the enabler expressions. This parameter has the default
           value <code class="computeroutput"><span class="keyword">void</span></code>. For example:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">Enable</span> <span class="special">=</span> <span class="keyword">void</span><span class="special">&gt;</span>
 <span class="keyword">class</span> <span class="identifier">A</span> <span class="special">{</span> <span class="special">...</span> <span class="special">};</span>
 
@@ -396,8 +356,6 @@
 <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="keyword">class</span> <span class="identifier">A</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">is_float</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;</span> <span class="special">&gt;::</span><span class="identifier">type</span><span class="special">&gt;</span> <span class="special">{</span> <span class="special">...</span> <span class="special">};</span>
 </pre>
-<p>
-        </p>
 <p>
           Instantiating <code class="computeroutput"><span class="identifier">A</span></code> with any
           integral type matches the first specialization, whereas any floating point
@@ -422,8 +380,6 @@
           conditions that are not mutually exclusive can lead to ambiguities. For
           example:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_integral</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;,</span> <span class="keyword">void</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">)</span> <span class="special">{}</span>
@@ -432,8 +388,6 @@
 <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;,</span> <span class="keyword">void</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">)</span> <span class="special">{}</span>
 </pre>
-<p>
-        </p>
 <p>
           All integral types are also arithmetic. Therefore, say, for the call <code class="computeroutput"><span class="identifier">foo</span><span class="special">(</span><span class="number">1</span><span class="special">)</span></code>, both
           conditions are true and both functions are thus in the overload resolution
@@ -455,8 +409,6 @@
           In some cases it is necessary to avoid instantiating part of a function
           signature unless an enabling condition is true. For example:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">U</span><span class="special">&gt;</span> <span class="keyword">class</span> <span class="identifier">mult_traits</span><span class="special">;</span>
 
 <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">U</span><span class="special">&gt;</span>
@@ -464,8 +416,6 @@
     <span class="keyword">typename</span> <span class="identifier">mult_traits</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">,</span> <span class="identifier">U</span><span class="special">&gt;::</span><span class="identifier">type</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="keyword">operator</span><span class="special">*(</span><span class="keyword">const</span> <span class="identifier">T</span><span class="special">&amp;</span> <span class="identifier">t</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">U</span><span class="special">&amp;</span> <span class="identifier">u</span><span class="special">)</span> <span class="special">{</span> <span class="special">...</span> <span class="special">}</span>
 </pre>
-<p>
-        </p>
 <p>
           Assume the class template <code class="computeroutput"><span class="identifier">mult_traits</span></code>
           is a traits class defining the resulting type of a multiplication operator.
@@ -486,8 +436,6 @@
           (and their <code class="computeroutput"><span class="identifier">_c</span></code> versions)
           can be used in such situations:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">U</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">lazy_enable_if</span><span class="special">&lt;</span><span class="identifier">is_multipliable</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">,</span> <span class="identifier">U</span><span class="special">&gt;,</span>
     <span class="identifier">mult_traits</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">,</span> <span class="identifier">U</span><span class="special">&gt;</span> <span class="special">&gt;::</span><span class="identifier">type</span>
@@ -524,8 +472,6 @@
           never be ambiguous). For example, some compilers (e.g. GCC 3.2) diagnose
           the following two functions as ambiguous:
         </p>
-<p>
-</p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
 <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;,</span> <span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">);</span>
@@ -535,14 +481,14 @@
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">);</span>
 </pre>
 <p>
-        </p>
-<p>
           Two workarounds can be applied:
         </p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
+<p class="simpara">
               Use an extra dummy parameter which disambiguates the functions. Use
               a default value for it to hide the parameter from the caller. For example:
+            </p>
 <pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="keyword">struct</span> <span class="identifier">dummy</span> <span class="special">{</span> <span class="identifier">dummy</span><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="special">{}</span> <span class="special">};</span>
 
 <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
@@ -553,11 +499,13 @@
 <span class="keyword">typename</span> <span class="identifier">disable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;,</span> <span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">type</span>
 <span class="identifier">foo</span><span class="special">(</span><span class="identifier">T</span> <span class="identifier">t</span><span class="special">,</span> <span class="identifier">dummy</span><span class="special">&lt;</span><span class="number">1</span><span class="special">&gt;</span> <span class="special">=</span> <span class="number">0</span><span class="special">);</span>
 </pre>
-            </li>
+</li>
 <li class="listitem">
+<p class="simpara">
               Define the functions in different namespaces and bring them into a
               common namespace with <code class="computeroutput"><span class="keyword">using</span></code>
               declarations:
+            </p>
 <pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">A</span> <span class="special">{</span>
     <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span>
     <span class="keyword">typename</span> <span class="identifier">enable_if</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_arithmetic</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;,</span> <span class="identifier">T</span><span class="special">&gt;::</span><span class="identifier">type</span>
@@ -573,12 +521,14 @@
 <span class="keyword">using</span> <span class="identifier">A</span><span class="special">::</span><span class="identifier">foo</span><span class="special">;</span>
 <span class="keyword">using</span> <span class="identifier">B</span><span class="special">::</span><span class="identifier">foo</span><span class="special">;</span>
 </pre>
+<p class="simpara">
               Note that the second workaround above cannot be used for member templates.
               On the other hand, operators do not accept extra arguments, which makes
               the first workaround unusable. As the net effect, neither of the workarounds
               are of assistance for templated operators that need to be defined as
               member functions (assignment and subscript operators).
-            </li>
+            </p>
+</li>
 </ul></div>
 </div>
 </div>
@@ -626,7 +576,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="checked_delete.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="explicit_operator_bool.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="demangle.html"><img src="http://boost.org/doc/libs/master/doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="http://boost.org/doc/libs/master/doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="explicit_operator_bool.html"><img src="http://boost.org/doc/libs/master/doc/src/images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>

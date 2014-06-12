@@ -26,22 +26,18 @@
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a name="core.noncopyable"></a><a class="link" href="noncopyable.html" title="noncopyable">noncopyable</a>
 </h2></div></div></div>
-<div class="toc"><dl class="toc">
-<dt><span class="section"><a href="noncopyable.html#core.noncopyable.authors">Authors</a></span></dt>
-<dt><span class="section"><a href="noncopyable.html#core.noncopyable.header__boost_core_noncopyable_hpp_">Header
-      &lt;boost/core/noncopyable.hpp&gt;</a></span></dt>
-</dl></div>
-<div class="section">
+<div class="toc"><dl class="toc"><dt><span class="section"><a href="noncopyable.html#core.noncopyable.header_boost_core_noncopyable_hp">Header
+      &lt;boost/core/noncopyable.hpp&gt;</a></span></dt></dl></div>
+<div class="simplesect">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.noncopyable.authors"></a><a class="link" href="noncopyable.html#core.noncopyable.authors" title="Authors">Authors</a>
-</h3></div></div></div>
+<a name="idp102855040"></a>Authors</h3></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
-            Dave Abrahams
-          </li></ul></div>
+          Dave Abrahams
+        </li></ul></div>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.noncopyable.header__boost_core_noncopyable_hpp_"></a><a class="link" href="noncopyable.html#core.noncopyable.header__boost_core_noncopyable_hpp_" title="Header &lt;boost/core/noncopyable.hpp&gt;">Header
+<a name="core.noncopyable.header_boost_core_noncopyable_hp"></a><a class="link" href="noncopyable.html#core.noncopyable.header_boost_core_noncopyable_hp" title="Header &lt;boost/core/noncopyable.hpp&gt;">Header
       &lt;boost/core/noncopyable.hpp&gt;</a>
 </h3></div></div></div>
 <p>
@@ -56,6 +52,27 @@
         <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">noncopyable</span></code> was originally contributed
         by Dave Abrahams.
       </p>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.noncopyable.header_boost_core_noncopyable_hp.synopsis"></a><a class="link" href="noncopyable.html#core.noncopyable.header_boost_core_noncopyable_hp.synopsis" title="Synopsis">Synopsis</a>
+</h4></div></div></div>
+<pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">boost</span>
+<span class="special">{</span>
+    <span class="keyword">class</span> <span class="identifier">noncopyable</span><span class="special">;</span>
+<span class="special">}</span>
+</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.noncopyable.header_boost_core_noncopyable_hp.example"></a><a class="link" href="noncopyable.html#core.noncopyable.header_boost_core_noncopyable_hp.example" title="Example">Example</a>
+</h4></div></div></div>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">noncopyable</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+
+<span class="keyword">class</span> <span class="identifier">X</span><span class="special">:</span> <span class="keyword">private</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">noncopyable</span>
+<span class="special">{</span>
+<span class="special">};</span>
+</pre>
+</div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

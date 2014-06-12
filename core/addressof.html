@@ -26,31 +26,26 @@
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a name="core.addressof"></a><a class="link" href="addressof.html" title="addressof">addressof</a>
 </h2></div></div></div>
-<div class="toc"><dl class="toc">
-<dt><span class="section"><a href="addressof.html#core.addressof.authors">Authors</a></span></dt>
-<dt><span class="section"><a href="addressof.html#core.addressof.header__boost_core_addressof_hpp_">Header
-      &lt;boost/core/addressof.hpp&gt;</a></span></dt>
-<dt><span class="section"><a href="addressof.html#core.addressof.example">Example</a></span></dt>
-</dl></div>
-<div class="section">
+<div class="toc"><dl class="toc"><dt><span class="section"><a href="addressof.html#core.addressof.header_boost_core_addressof_hpp">Header
+      &lt;boost/core/addressof.hpp&gt;</a></span></dt></dl></div>
+<div class="simplesect">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.addressof.authors"></a><a class="link" href="addressof.html#core.addressof.authors" title="Authors">Authors</a>
-</h3></div></div></div>
+<a name="idp96519600"></a>Authors</h3></div></div></div>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-            Brad King
-          </li>
+          Brad King
+        </li>
 <li class="listitem">
-            Douglas Gregor
-          </li>
+          Douglas Gregor
+        </li>
 <li class="listitem">
-            Peter Dimov
-          </li>
+          Peter Dimov
+        </li>
 </ul></div>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="core.addressof.header__boost_core_addressof_hpp_"></a><a class="link" href="addressof.html#core.addressof.header__boost_core_addressof_hpp_" title="Header &lt;boost/core/addressof.hpp&gt;">Header
+<a name="core.addressof.header_boost_core_addressof_hpp"></a><a class="link" href="addressof.html#core.addressof.header_boost_core_addressof_hpp" title="Header &lt;boost/core/addressof.hpp&gt;">Header
       &lt;boost/core/addressof.hpp&gt;</a>
 </h3></div></div></div>
 <p>
@@ -65,13 +60,20 @@
         <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">addressof</span></code> was originally contributed by
         Brad King based on ideas from discussion with Doug Gregor.
       </p>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.addressof.header_boost_core_addressof_hpp.synopsis"></a><a class="link" href="addressof.html#core.addressof.header_boost_core_addressof_hpp.synopsis" title="Synopsis">Synopsis</a>
+</h4></div></div></div>
+<pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">boost</span>
+<span class="special">{</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">T</span><span class="special">&gt;</span> <span class="identifier">T</span><span class="special">*</span> <span class="identifier">addressof</span><span class="special">(</span> <span class="identifier">T</span><span class="special">&amp;</span> <span class="identifier">x</span> <span class="special">);</span>
+<span class="special">}</span>
+</pre>
 </div>
 <div class="section">
-<div class="titlepage"><div><div><h3 class="title">
-<a name="core.addressof.example"></a><a class="link" href="addressof.html#core.addressof.example" title="Example">Example</a>
-</h3></div></div></div>
-<p>
-</p>
+<div class="titlepage"><div><div><h4 class="title">
+<a name="core.addressof.header_boost_core_addressof_hpp.example"></a><a class="link" href="addressof.html#core.addressof.header_boost_core_addressof_hpp.example" title="Example">Example</a>
+</h4></div></div></div>
 <pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">core</span><span class="special">/</span><span class="identifier">addressof</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 
 <span class="keyword">struct</span> <span class="identifier">useless_type</span> <span class="special">{</span> <span class="special">};</span>
@@ -86,8 +88,7 @@
     <span class="comment">// nonaddressable* xpe = &amp;x; /* error */</span>
 <span class="special">}</span>
 </pre>
-<p>
-      </p>
+</div>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
